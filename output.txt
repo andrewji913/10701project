@@ -1,0 +1,145 @@
+Using Colab cache for faster access to the 'en-fr-translation-dataset' dataset.
+['en-fr.csv']
+Total Parameters: 2680512
+Trainable Parameters: 2680512
+Kept 500000 pairs after filtering.
+Epoch 0
+                                                                                           Train loss: 5.203645 | Accuracy: 20.3618%
+Test loss: 4.423693 | Accuracy: 27.3227%
+BLEU: 4.40
+  hyp: les plus de plus de plus amples renseignements, d'autres
+  ref: les résultant d'une mauvaise manipulation constituent des voies d'accès pour la ainsi que pour d'autres
+  hyp: développement de développement canada canada canada
+  ref: financement des exportations et développement canada de développement du canada commerciale canadienne
+  hyp: a. est trois exemples de la page 1.
+  ref: trois façons d'obtenir l'information : 1.
+  hyp: les autres et les autres
+  ref: de la s'il y a lieu
+  hyp: le canada a augmenté de la croissance économique de la production de la production de la production de la production de la production de
+  ref: l’ouest du canada a connu la plus forte baisse du nombre de coopératives agricoles alors que le québec a signalé la plus forte
+Epoch 1
+                                                                                           Train loss: 4.276393 | Accuracy: 28.6658%
+Test loss: 3.909585 | Accuracy: 33.2065%
+BLEU: 7.34
+  hyp: les entreprises et les autres types de
+  ref: les résultant d'une mauvaise manipulation constituent des voies d'accès pour la ainsi que pour d'autres
+  hyp: développement du canada canada a annoncé la banque du canada
+  ref: financement des exportations et développement canada de développement du canada commerciale canadienne
+  hyp: a. sont trois façons de renseignements sur le site web 1.
+  ref: trois façons d'obtenir l'information : 1.
+  hyp: lutte contre les mauvaises herbes
+  ref: de la s'il y a lieu
+  hyp: le canada a enregistré la plus grande partie de la production agricole de la région de la région de la
+  ref: l’ouest du canada a connu la plus forte baisse du nombre de coopératives agricoles alors que le québec a signalé la plus forte
+Epoch 2
+                                                                                           Train loss: 3.924343 | Accuracy: 32.4850%
+Test loss: 3.673029 | Accuracy: 36.0958%
+BLEU: 9.41
+  hyp: les plus populaires ou les autres
+  ref: les résultant d'une mauvaise manipulation constituent des voies d'accès pour la ainsi que pour d'autres
+  hyp: développement de développement du canada de la banque du canada
+  ref: financement des exportations et développement canada de développement du canada commerciale canadienne
+  hyp: r. il y a trois façons de trouver des renseignements sur le plan de
+  ref: trois façons d'obtenir l'information : 1.
+  hyp: la lutte contre la lutte contre le
+  ref: de la s'il y a lieu
+  hyp: le canada a connu la baisse des coopératives agricoles en provenance de la production agricole et de la production de
+  ref: l’ouest du canada a connu la plus forte baisse du nombre de coopératives agricoles alors que le québec a signalé la plus forte
+Epoch 3
+                                                                                           Train loss: 3.729833 | Accuracy: 34.6855%
+Test loss: 3.525230 | Accuracy: 38.0793%
+BLEU: 11.29
+  hyp: les autres points de vue de la et d’autres
+  ref: les résultant d'une mauvaise manipulation constituent des voies d'accès pour la ainsi que pour d'autres
+  hyp: développement de développement du canada développement du canada
+  ref: financement des exportations et développement canada de développement du canada commerciale canadienne
+  hyp: a. on trouvera trois façons de trouver des renseignements 1.
+  ref: trois façons d'obtenir l'information : 1.
+  hyp: la lutte contre le puceron de la végétation
+  ref: de la s'il y a lieu
+  hyp: le canada a connu la baisse de la plus forte plus de 80 % des coopératives agricoles et de l’ouest de l’ouest
+  ref: l’ouest du canada a connu la plus forte baisse du nombre de coopératives agricoles alors que le québec a signalé la plus forte
+Epoch 4
+                                                                                           Train loss: 3.600056 | Accuracy: 36.2131%
+Test loss: 3.429454 | Accuracy: 39.2550%
+BLEU: 12.26
+  hyp: les produits ou les autres
+  ref: les résultant d'une mauvaise manipulation constituent des voies d'accès pour la ainsi que pour d'autres
+  hyp: financement de la banque du canada développement économique canada
+  ref: financement des exportations et développement canada de développement du canada commerciale canadienne
+  hyp: r. il y a trois façons de trouver des renseignements 1.
+  ref: trois façons d'obtenir l'information : 1.
+  hyp: lutte contre la végétation
+  ref: de la s'il y a lieu
+  hyp: le canada a connu la plus forte baisse de la plus grande partie de la plus grande partie de la plus grande
+  ref: l’ouest du canada a connu la plus forte baisse du nombre de coopératives agricoles alors que le québec a signalé la plus forte
+Epoch 5
+                                                                                           Train loss: 3.504369 | Accuracy: 37.3607%
+Test loss: 3.351856 | Accuracy: 40.1689%
+BLEU: 13.27
+  hyp: les et les autres sont les plus
+  ref: les résultant d'une mauvaise manipulation constituent des voies d'accès pour la ainsi que pour d'autres
+  hyp: financement du financement du canada développement du canada industrie canada
+  ref: financement des exportations et développement canada de développement du canada commerciale canadienne
+  hyp: a. on trouvera trois façons de trouver des renseignements sur les renseignements 1.
+  ref: trois façons d'obtenir l'information : 1.
+  hyp: la végétation de la végétation
+  ref: de la s'il y a lieu
+  hyp: le canada a connu une diminution de la plus grande partie de la production agricole.
+  ref: l’ouest du canada a connu la plus forte baisse du nombre de coopératives agricoles alors que le québec a signalé la plus forte
+Epoch 6
+                                                                                           Train loss: 3.428651 | Accuracy: 38.2496%
+Test loss: 3.298946 | Accuracy: 40.9261%
+BLEU: 13.50
+  hyp: les produits ou les autres
+  ref: les résultant d'une mauvaise manipulation constituent des voies d'accès pour la ainsi que pour d'autres
+  hyp: financement de la banque du canada de la banque du canada
+  ref: financement des exportations et développement canada de développement du canada commerciale canadienne
+  hyp: r. il y a trois façons de trouver des renseignements 1.
+  ref: trois façons d'obtenir l'information : 1.
+  hyp: la végétation de la végétation et de la
+  ref: de la s'il y a lieu
+  hyp: le canada a connu une baisse de la plus grande partie de la production agricole et de québec.
+  ref: l’ouest du canada a connu la plus forte baisse du nombre de coopératives agricoles alors que le québec a signalé la plus forte
+Epoch 7
+                                                                                           Train loss: 3.367641 | Accuracy: 38.9537%
+Test loss: 3.256057 | Accuracy: 41.4585%
+BLEU: 14.00
+  hyp: la peau ou les autres
+  ref: les résultant d'une mauvaise manipulation constituent des voies d'accès pour la ainsi que pour d'autres
+  hyp: financement du canada développement du canada
+  ref: financement des exportations et développement canada de développement du canada commerciale canadienne
+  hyp: r. il y a trois façons de trouver des renseignements suivants : 1.
+  ref: trois façons d'obtenir l'information : 1.
+  hyp: lutte contre la végétation et la
+  ref: de la s'il y a lieu
+  hyp: l’ouest canada a connu une baisse de la baisse des coopératives agricoles et de québec ont déclaré que le plus
+  ref: l’ouest du canada a connu la plus forte baisse du nombre de coopératives agricoles alors que le québec a signalé la plus forte
+Epoch 8
+                                                                                           Train loss: 3.316957 | Accuracy: 39.5801%
+Test loss: 3.216135 | Accuracy: 42.0596%
+BLEU: 14.84
+  hyp: la peau ou d’autres sont les points de et d’autres
+  ref: les résultant d'une mauvaise manipulation constituent des voies d'accès pour la ainsi que pour d'autres
+  hyp: financement de l’industrie du développement du canada industrie canada
+  ref: financement des exportations et développement canada de développement du canada commerciale canadienne
+  hyp: a. on trouve trois façons de trouver des renseignements 1.
+  ref: trois façons d'obtenir l'information : 1.
+  hyp: la végétation et la végétation
+  ref: de la s'il y a lieu
+  hyp: l’ouest canada a connu une baisse de la plus grande baisse de la superficie agricole et de l’ouest du québec ont enregistré la plus forte hausse.
+  ref: l’ouest du canada a connu la plus forte baisse du nombre de coopératives agricoles alors que le québec a signalé la plus forte
+Epoch 9
+Train loss: 3.273477 | Accuracy: 40.1272%
+Test loss: 3.184756 | Accuracy: 42.4851%
+BLEU: 15.41
+  hyp: la peau ou les autres sont les plus
+  ref: les résultant d'une mauvaise manipulation constituent des voies d'accès pour la ainsi que pour d'autres
+  hyp: développement de la banque du canada développement du canada
+  ref: financement des exportations et développement canada de développement du canada commerciale canadienne
+  hyp: a. il y a trois façons de trouver des renseignements suivants : 1.
+  ref: trois façons d'obtenir l'information : 1.
+  hyp: lutte contre la végétation et la végétation
+  ref: de la s'il y a lieu
+  hyp: l’ouest canada a connu une baisse de la baisse de la production agricole et de québec ont enregistré la plus forte hausse de la
+  ref: l’ouest du canada a connu la plus forte baisse du nombre de coopératives agricoles alors que le québec a signalé la plus forte
