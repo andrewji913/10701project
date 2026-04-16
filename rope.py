@@ -1,7 +1,5 @@
 # Install dependencies as needed:
 # pip install kagglehub[pandas-datasets]
-import kagglehub
-from kagglehub import KaggleDatasetAdapter
 import sacrebleu
 import pickle
 import tqdm
@@ -15,7 +13,6 @@ import os
 import kagglehub
 
 dataset_path = kagglehub.dataset_download("dhruvildave/en-fr-translation-dataset")
-print(os.listdir(dataset_path))   # confirm the CSV filename
 file_path = os.path.join(dataset_path, "en-fr.csv")
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -33,8 +30,8 @@ class RotaryPositionalEncoding(nn.Module):
         self.register_buffer("cos_cached", freqs.cos())  # (max_len, d_k/2)
         self.register_buffer("sin_cached", freqs.sin())  # (max_len, d_k/2)
 
-    def forward(self, seq_len):
-        return self.cos_cached[:seq_len], self.sin_cached[:seq_len]
+    def forward(self, seq_len, device):
+        return self.cos_cached[:seq_len].to(device), self.sin_cached[:seq_len].to(device)
 
 
 def apply_rope(x, cos, sin):
@@ -120,14 +117,14 @@ class Decoder(nn.Module):
         # Hint: nn.ModuleList()
         self.transformEmbed = TransformerEmbedding(vocab_size, d_model)
         self.multiLayers = nn.ModuleList([DecoderLayer(n_heads, d_model, d_k, d_v, d_lin) for i in range(n_layers)])
-        self.rope = RotaryPositionalEncoding(d_k, max_len = 500)
+        self.rope = RotaryPositionalEncoding(d_k, max_len=512)
         self.fc = nn.Linear(d_model, vocab_size)
 
     def forward(self, inp): # inp (batch, seq_len): tells number of sentences in batch, and length of each sentence of batch
         # TODO: Implement forward by embedding the input and passing it through all layers
         seq_len = inp.shape[1]
-        cos, sin = self.rope(seq_len)
-        mask = torch.tril(torch.ones(seq_len, seq_len)).bool().to(inp.device)
+        cos, sin = self.rope(seq_len, inp.device)
+        mask = torch.tril(torch.ones(seq_len, seq_len, device=inp.device)).bool()
 
         embedded = self.transformEmbed(inp)
         for layer in self.multiLayers:
@@ -242,6 +239,7 @@ def train(model, train_loader, epoch, optimizer, criterion):
 
         optimizer.zero_grad()
         loss.backward()
+        torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)
         optimizer.step()
 
         train_avg_loss += loss.item()
@@ -288,6 +286,7 @@ def test(model, test_loader, epoch, criterion):
 
 def run(num_epochs, model, train_loader, test_loader, optimizer, criterion, vocab, max_len):
     train_loss_hist, train_acc_hist, test_loss_hist, test_acc_hist, bleu_hist = [], [], [], [], []
+    best_bleu = 0.0
     for epoch in range(num_epochs):
         print(f"Epoch {epoch}")
         train_loss, train_acc = train(model, train_loader, epoch, optimizer, criterion)
@@ -310,22 +309,39 @@ def run(num_epochs, model, train_loader, test_loader, optimizer, criterion, voca
         test_loss_hist.append(test_loss)
         test_acc_hist.append(test_acc)
         bleu_hist.append(bleu_score)
+
+        # Save checkpoint after each epoch
+        checkpoint = {
+            'epoch': epoch,
+            'model_state_dict': model.state_dict(),
+            'optimizer_state_dict': optimizer.state_dict(),
+            'train_loss': train_loss,
+            'test_loss': test_loss,
+            'bleu': bleu_score,
+            'vocab': vocab,
+        }
+        torch.save(checkpoint, f'checkpoint_epoch_{epoch}.pt')
+        if bleu_score > best_bleu:
+            best_bleu = bleu_score
+            torch.save(checkpoint, 'best_model.pt')
+            print(f"  New best BLEU: {best_bleu:.2f} — saved to best_model.pt")
+
     return train_loss_hist, train_acc_hist, test_loss_hist, test_acc_hist, bleu_hist
 
 
 def main(
     #Hyperparameters
-    vocabulary_size = 20000,
-    batch_size = 128,
-    max_length = 50,
+    vocabulary_size = 32000,
+    batch_size = 64,
+    max_length = 100,
     lr = 1e-3,
     num_epochs = 10,
-    n_heads = 3,
-    d_model = 64,
-    d_k = 32,
-    d_v = 32,
-    d_lin = 256,
-    n_layers = 4
+    n_heads = 8,
+    d_model = 512,
+    d_k = 64,
+    d_v = 64,
+    d_lin = 2048,
+    n_layers = 6
 ):
 
     # TODO: Initialize Transformer model, criterion and optimizer

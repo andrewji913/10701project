@@ -15,16 +15,21 @@ class TranslationDataset(Dataset):
         SOS = word_dict["SOS"]
         EOS = word_dict["EOS"]
         SEP = word_dict["SEP"]
-        self.seqs = []
-        self.sep_positions = []
-        for s, t in zip(src_texts, tgt_texts):
+        N = len(src_texts)
+        # Pre-allocate contiguous arrays — avoids 11M individual Python objects
+        seqs_np = np.zeros((N, max_len), dtype=np.int32)
+        sep_np  = np.zeros(N, dtype=np.int32)
+        for i, (s, t) in enumerate(zip(src_texts, tgt_texts)):
             eng_ids = [word_dict[w] for w in s.lower().split() if w in word_dict]
             fr_ids  = [word_dict[w] for w in t.lower().split() if w in word_dict]
             seq = [SOS] + eng_ids + [SEP] + fr_ids + [EOS]
             seq = seq[:max_len]
-            sep_pos = 1 + len(eng_ids)  # index of SEP in seq
-            self.seqs.append(torch.tensor(seq, dtype=torch.long))
-            self.sep_positions.append(sep_pos)
+            sep_pos = min(1 + len(eng_ids), max_len - 1)
+            seqs_np[i, :len(seq)] = seq
+            sep_np[i] = sep_pos
+        # Single shared tensor — no per-sample Python overhead
+        self.seqs = torch.from_numpy(seqs_np).long()
+        self.sep_positions = torch.from_numpy(sep_np).long()
 
     def __len__(self):
         return len(self.seqs)
@@ -43,7 +48,7 @@ def build_combined_vocab(en_texts, fr_texts, vocab_size):
     for sent in list(en_texts) + list(fr_texts):
         for word in sent.lower().split():
             word_count[word] = word_count.get(word, 0) + 1
-    # reserve 4 slots for PAD, SOS, EOS, SEP
+    # 4 slots for PAD, SOS, EOS, SEP
     top_words = sorted(word_count.items(), key=lambda x: x[1], reverse=True)[:vocab_size - 4]
     word_dict = {"PAD": 0, "SOS": 1, "EOS": 2, "SEP": 3}
     for i, (word, _) in enumerate(top_words):
@@ -55,45 +60,45 @@ def get_translation_dataloader(
     vocab_size=10000,
     max_len=50,
     batch_size=64,
-    n_samples=500_000,     # how many pairs to actually use
-    chunk_size=200_000,    # rows per CSV chunk while streaming
+    n_samples=11_000_000,  # half of 22M dataset
+    chunk_size=500_000,    # larger chunks = fewer pandas overhead calls
+    num_workers=4,         # increase for AWS (match to vCPU count)
+    cache_path=None,       # e.g. "data_cache.pt" — skip CSV reprocessing on reruns
 ):
+    if cache_path and os.path.exists(cache_path):
+        print(f"Loading preprocessed data from {cache_path} ...")
+        cache = torch.load(cache_path)
+        return cache['train_loader'], cache['test_loader'], cache['word_dict']
+
     # ---- 1. Stream the CSV in chunks, length-filter, and reservoir-sample ----
     kept_en, kept_fr = [], []
     rng = random.Random(10701)
+    total_seen = 0
 
     reader = pd.read_csv(csv_path, chunksize=chunk_size, usecols=['en', 'fr'])
-    # NOTE: column names in dhruvildave/en-fr-translation-dataset are 'en' and 'fr' (lowercase).
-    # If your CSV has 'English' / 'French', change usecols and the references below.
 
     for chunk in reader:
         chunk = chunk.dropna()
-        # cheap length filter on whitespace tokens — keep only short pairs
         en_lens = chunk['en'].str.split().str.len()
         fr_lens = chunk['fr'].str.split().str.len()
-        # leave room for SOS, SEP, EOS  =>  en + fr + 3 <= max_len
         mask = (en_lens > 0) & (fr_lens > 0) & (en_lens + fr_lens + 3 <= max_len)
         chunk = chunk[mask]
 
         for en, fr in zip(chunk['en'].tolist(), chunk['fr'].tolist()):
+            total_seen += 1
             if len(kept_en) < n_samples:
                 kept_en.append(en)
                 kept_fr.append(fr)
             else:
-                # reservoir sampling so we get a uniform sample across the full file
-                j = rng.randint(0, len(kept_en))  # crude but fine here
+                # True reservoir sampling — uniform draw from all rows seen so far
+                j = rng.randint(0, total_seen - 1)
                 if j < n_samples:
                     kept_en[j] = en
                     kept_fr[j] = fr
 
-        if len(kept_en) >= n_samples:
-            # early exit: once full, we have a representative-enough subset
-            # (remove this break if you want true reservoir sampling over the whole file)
-            break
+    print(f"Scanned {total_seen} filtered pairs, kept {len(kept_en)}.")
 
-    print(f"Kept {len(kept_en)} pairs after filtering.")
-
-    # ---- 2. Build vocab on the SUBSET, not the full 22M rows ----
+    # ---- 2. Build vocab on the SUBSET ----
     word_dict = build_combined_vocab(kept_en, kept_fr, vocab_size)
 
     # ---- 3. Train/test split ----
@@ -107,17 +112,26 @@ def get_translation_dataloader(
     test_en  = [kept_en[i] for i in test_idx]
     test_fr  = [kept_fr[i] for i in test_idx]
 
+    # Free raw text lists before building tensors (saves ~2-3 GB peak RAM)
+    del kept_en, kept_fr, idx, train_idx, test_idx
+
     train_set = TranslationDataset(train_en, train_fr, word_dict, max_len)
     test_set  = TranslationDataset(test_en,  test_fr,  word_dict, max_len)
 
     train_loader = DataLoader(
         train_set, batch_size=batch_size, shuffle=True,
         collate_fn=translation_collate, drop_last=True,
-        num_workers=2, pin_memory=True,
+        num_workers=num_workers, pin_memory=True, persistent_workers=True,
     )
     test_loader = DataLoader(
         test_set, batch_size=batch_size, shuffle=False,
         collate_fn=translation_collate, drop_last=True,
-        num_workers=2, pin_memory=True,
+        num_workers=num_workers, pin_memory=True, persistent_workers=True,
     )
+
+    if cache_path:
+        print(f"Saving preprocessed data to {cache_path} ...")
+        torch.save({'train_loader': train_loader, 'test_loader': test_loader,
+                    'word_dict': word_dict}, cache_path)
+
     return train_loader, test_loader, word_dict
