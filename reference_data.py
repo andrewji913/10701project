@@ -29,9 +29,9 @@ class TranslationDataset(Dataset):
             sep_pos = min(1 + len(eng_ids), max_len - 1)
             seqs_np[i, :len(seq)] = seq
             sep_np[i] = sep_pos
-        # Single shared tensor — no per-sample Python overhead
-        self.seqs = torch.from_numpy(seqs_np).long()
-        self.sep_positions = torch.from_numpy(sep_np).long()
+        # Keep as int32 to halve RAM; convert to long in collate
+        self.seqs = torch.from_numpy(seqs_np)
+        self.sep_positions = torch.from_numpy(sep_np)
 
     def __len__(self):
         return len(self.seqs)
@@ -41,8 +41,8 @@ class TranslationDataset(Dataset):
 
 def translation_collate(batch):
     seqs, sep_positions = zip(*batch)
-    seq_pad = pad_sequence(seqs, batch_first=True, padding_value=0)  # (B, L)
-    sep_positions = torch.tensor(sep_positions, dtype=torch.long)    # (B,)
+    seq_pad = pad_sequence(seqs, batch_first=True, padding_value=0).long()  # (B, L)
+    sep_positions = torch.stack(sep_positions).long()                        # (B,)
     return seq_pad, sep_positions
                                                                                                                             
 def build_combined_vocab(en_texts, fr_texts, vocab_size):
@@ -62,7 +62,7 @@ def get_translation_dataloader(
     vocab_size=10000,
     max_len=50,
     batch_size=64,
-    n_samples=13_000_000,  # half of 22M dataset
+    n_samples=25_000_000,  # >22.5M dataset size -> keeps all pairs
     chunk_size=500_000,    # larger chunks = fewer pandas overhead calls
     num_workers=4,         # increase for AWS (match to vCPU count)
     cache_path=None,       # e.g. "data_cache.pt" — skip CSV reprocessing on reruns
@@ -89,6 +89,8 @@ def get_translation_dataloader(
     kept_en, kept_fr = [], []
     rng = random.Random(10701)
     total_seen = 0
+    total_rows = 0
+    filtered_length = 0
 
     skipped = 0
     with open(csv_path, 'r', encoding='utf-8', errors='replace', newline='') as f:
@@ -101,13 +103,17 @@ def get_translation_dataloader(
             except csv.Error:
                 skipped += 1
                 continue
+            total_rows += 1
             en = row.get('en')
             fr = row.get('fr')
             if not en or not fr:
                 continue
             en_len = len(en.split())
             fr_len = len(fr.split())
-            if en_len == 0 or fr_len == 0 or en_len + fr_len + 3 > max_len:
+            if en_len == 0 or fr_len == 0:
+                continue
+            if en_len + fr_len + 3 > max_len:
+                filtered_length += 1
                 continue
 
             total_seen += 1
@@ -120,8 +126,7 @@ def get_translation_dataloader(
                     kept_en[j] = en
                     kept_fr[j] = fr
     print(f"Skipped {skipped} malformed rows.")
-
-    print(f"Scanned {total_seen} filtered pairs, kept {len(kept_en)}.")
+    print(f"Total rows: {total_rows} | Filtered out (too long): {filtered_length} | Passed filter: {total_seen} | Kept: {len(kept_en)}")
 
     # ---- 2. Build vocab on the SUBSET ----
     word_dict = build_combined_vocab(kept_en, kept_fr, vocab_size)
