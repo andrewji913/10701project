@@ -1,0 +1,1239 @@
+ubuntu@ip-172-31-36-161:/$ cd ~/project
+ubuntu@ip-172-31-36-161:~/project$ opt/pytorch/bin/python rope.py
+-bash: opt/pytorch/bin/python: No such file or directory
+ubuntu@ip-172-31-36-161:~/project$
+  /opt/pytorch/bin/python rope.py
+/opt/pytorch/lib/python3.13/site-packages/torch/cuda/__init__.py:65: FutureWarning: The pynvml pack
+age is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, ple
+ase report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+Total Parameters: 51714304
+Trainable Parameters: 51714304
+Scanned 20403683 filtered pairs, kept 1000000.
+Epoch 0
+Train loss: 3.653645 | Accuracy: 37.0970%
+
+Test loss: 3.029825 | Accuracy: 44.0980%
+BLEU: 17.68
+  hyp: de plus, le premier rapport du groupe consultatif du ged devrait être mis à la fin de l’anné
+e.
+  ref: il est également prévu que le groupe conseil sur le ged présentera son premier rapport d’ici
+ la fin de l’année.
+  hyp: le chef de la en chef a été qui était représenté par deux descendants qui étaient en deux gr
+oupes.
+  ref: à la fin du siècle, le grand chef de la tribu est back auquel deux descendants portant le mê
+me nom.
+  hyp: long distance de la fin des années 1990, a débuté à la fin des années 1980.
+  ref: la des services a commencé à la fin des années 80, et la concurrence fondée sur les installa
+tions en 1992.
+  hyp: ratio de rotation 1994-2003 fabrication de 1994-2003 fabrication de carton (scian comparaiso
+n avec secteur industriel
+  ref: ratio de l'intensité manufacturière établissements principaux 1994-2003 fonderies (scian com
+paraison au secteur de la fabrication
+  hyp: le sous-alinéa de la version française du même règlement est modifié pour rendre compatible
+avec la version anglaise de
+  ref: le sous-alinéa de la version française du règlement est modifié pour être conforme à la vers
+ion anglaise.
+  New best BLEU: 17.68 — saved to best_model.pt
+Epoch 1
+Train loss: 2.912407 | Accuracy: 45.0271%
+
+Test loss: 2.790052 | Accuracy: 47.2294%
+^[[A^[[A^[[A^[[A^[[ABLEU: 19.55
+  hyp: en outre, le premier rapport du groupe consultatif du ged devrait être d'ici la fin de l'ann
+ée.
+  ref: il est également prévu que le groupe conseil sur le ged présentera son premier rapport d’ici
+ la fin de l’année.
+  hyp: le chef du chef du à la fin des années a été qui a réussi à la fin des années
+  ref: à la fin du siècle, le grand chef de la tribu est back auquel deux descendants portant le mê
+me nom.
+  hyp: la longue distance, la concurrence a débuté à la fin des années 1980.
+  ref: la des services a commencé à la fin des années 80, et la concurrence fondée sur les installa
+tions en 1992.
+  hyp: l'intensité du ratio de la valeur manufacturière 1994-2003 fabrication aérospatiale comparat
+ivement à la fabrication de produits
+  ref: ratio de l'intensité manufacturière établissements principaux 1994-2003 fonderies (scian com
+paraison au secteur de la fabrication
+  hyp: le sous-alinéa de la version française du même règlement est modifié afin de le rendre confo
+rme à la version anglaise.
+  ref: le sous-alinéa de la version française du règlement est modifié pour être conforme à la vers
+ion anglaise.
+  New best BLEU: 19.55 — saved to best_model.pt
+Epoch 2
+Train epoch 2:  15%|███████████▋                                                                 |
+2143/14062 [05:26<30:20,  6.55it/s, avg=2.6614, loss=2.8162]Train epoch 2:  15%|███████████▊
+                                                          | 2148/14062 [05:27<30:17,  6.55it/s, avg
+=2.6615, loss=2.7240]Train loss: 2.692062 | Accuracy: 47.6799%
+
+Test loss: 2.682188 | Accuracy: 48.7546%
+BLEU: 21.00
+  hyp: de plus, le premier rapport du groupe consultatif du ged devrait être consulté à la fin de l
+’année.
+  ref: il est également prévu que le groupe conseil sur le ged présentera son premier rapport d’ici
+ la fin de l’année.
+  hyp: le chef de la direction de la direction a été surpris de la direction de la direction de la
+direction de la direction de la direction de la direction de la direction de la direction de la dir
+ection de la direction de la direction de la direction de la direction de la direction de la direct
+ion de la direction de la direction de la direction de la direction de la direction de la direction
+ de la direction de la direction de la direction de la direction de la direction de la direction de
+ la direction de la direction de la
+  ref: à la fin du siècle, le grand chef de la tribu est back auquel deux descendants portant le mê
+me nom.
+  hyp: depuis longtemps la longue distance. la compétition a commencé à la fin des années 1980.
+  ref: la des services a commencé à la fin des années 80, et la concurrence fondée sur les installa
+tions en 1992.
+  hyp: ratios de la fabrication (scian
+  ref: ratio de l'intensité manufacturière établissements principaux 1994-2003 fonderies (scian com
+paraison au secteur de la fabrication
+  hyp: le sous-alinéa de la version française du même règlement est modifié de façon conforme à la
+version anglaise de ce règlement.
+  ref: le sous-alinéa de la version française du règlement est modifié pour être conforme à la vers
+ion anglaise.
+  New best BLEU: 21.00 — saved to best_model.pt
+Epoch 3
+Train loss: 2.566012 | Accuracy: 49.2264%
+
+Test loss: 2.638404 | Accuracy: 49.7421%
+^[[ABLEU: 22.36
+  hyp: de plus, le premier rapport du groupe consultatif du ged devrait être d'ici la fin de l'anné
+e.
+  ref: il est également prévu que le groupe conseil sur le ged présentera son premier rapport d’ici
+ la fin de l’année.
+  hyp: le chef de la tête de la à la fin de la fin de a été de deux descendants qui ont le même nom
+.
+  ref: à la fin du siècle, le grand chef de la tribu est back auquel deux descendants portant le mê
+me nom.
+  hyp: depuis la fin des années 1980, la compétition commence à la fin des années 80.
+  ref: la des services a commencé à la fin des années 80, et la concurrence fondée sur les installa
+tions en 1992.
+  hyp: ratio de l'intensité manufacturière établissements principaux 1994-2003 fabrication de produ
+its de base (scian comparaison avec le secteur manufacturier
+  ref: ratio de l'intensité manufacturière établissements principaux 1994-2003 fonderies (scian com
+paraison au secteur de la fabrication
+  hyp: le sous-alinéa de la version française du même règlement est modifié pour le rendre conforme
+ à la version anglaise.
+  ref: le sous-alinéa de la version française du règlement est modifié pour être conforme à la vers
+ion anglaise.
+  New best BLEU: 22.36 — saved to best_model.pt
+Epoch 4
+Train loss: 2.480109 | Accuracy: 50.3050%
+
+Test loss: 2.594130 | Accuracy: 50.3565%
+BLEU: 22.97
+  hyp: de plus, le premier rapport du groupe consultatif du ged devrait être publié à la fin de l’a
+nnée.
+  ref: il est également prévu que le groupe conseil sur le ged présentera son premier rapport d’ici
+ la fin de l’année.
+  hyp: le chef principal de la a été retourné à la fin des années 1940 qui a été par deux descendan
+ts qui le même nom.
+  ref: à la fin du siècle, le grand chef de la tribu est back auquel deux descendants portant le mê
+me nom.
+  hyp: la longue distance de la a commencé à vers la fin des années 1980, la compétition commence e
+n 1992.
+  ref: la des services a commencé à la fin des années 80, et la concurrence fondée sur les installa
+tions en 1992.
+  hyp: ratio de l'intensité manufacturière établissements principaux 1994-2003 comparaison avec le
+secteur de la fabrication
+  ref: ratio de l'intensité manufacturière établissements principaux 1994-2003 fonderies (scian com
+paraison au secteur de la fabrication
+  hyp: le sous-alinéa de la version française du même règlement est modifié pour qu'il les
+  ref: le sous-alinéa de la version française du règlement est modifié pour être conforme à la vers
+ion anglaise.
+  New best BLEU: 22.97 — saved to best_model.pt
+Epoch 5
+Train loss: 2.415576 | Accuracy: 51.1267%
+
+Test loss: 2.575773 | Accuracy: 50.5661%
+BLEU: 23.00
+  hyp: en outre, le premier rapport du groupe consultatif du ged devrait être d'ici la fin de l’exe
+rcice.
+  ref: il est également prévu que le groupe conseil sur le ged présentera son premier rapport d’ici
+ la fin de l’année.
+  hyp: le chef principal de la à la fin des années a été qui a réussi 2 descendants ayant le même n
+om.
+  ref: à la fin du siècle, le grand chef de la tribu est back auquel deux descendants portant le mê
+me nom.
+  hyp: la longue distance de la a commencé à la fin des années 1980.
+  ref: la des services a commencé à la fin des années 80, et la concurrence fondée sur les installa
+tions en 1992.
+  hyp: ratio de l'intensité manufacturière établissements principaux 1994-2003 fabrication
+  ref: ratio de l'intensité manufacturière établissements principaux 1994-2003 fonderies (scian com
+paraison au secteur de la fabrication
+  hyp: sous-alinéa de la version française du même règlement est modifié de manière à en faire corr
+espondre la version anglaise.
+  ref: le sous-alinéa de la version française du règlement est modifié pour être conforme à la vers
+ion anglaise.
+  New best BLEU: 23.00 — saved to best_model.pt
+Epoch 6
+Train epoch 6:  46%|███████████████████████████████████▋                                         |
+6509/14062 [16:26<19:05,  6.59it/s, avg=2.3282, loss=2.2297]Train epoch 6:  48%|███████████████████
+██████████████████▎                                       | 6816/14062 [17:12<18:19,  6.59it/s, avg
+=2.3304, loss=2.6281]Train epoch 6:  48%|█████████████████████████████████████▎
+                   | 6817/14062 [17:12<18:18,  6.60it/s, avg=2.3304, loss=2.3281]Train epoch 6:  48
+%|█████████████████████████████████████▎                                       | 6819/14062 [17:13<
+18:17,  6.60it/s, avg=2.3304, loss=2.5617]Train epoch 6:  48%|█████████████████████████████████████
+▎                                       | 6820/14062 [17:13<18:19,  6.58it/s, avg=2.3304, loss=2.31
+18]Train loss: 2.363949 | Accuracy: 51.7719%
+
+Test loss: 2.563882 | Accuracy: 50.8700%
+BLEU: 23.54
+  hyp: de plus, le premier rapport du groupe consultatif du ged du ged devrait être publié d'ici la
+ fin de l'année.
+  ref: il est également prévu que le groupe conseil sur le ged présentera son premier rapport d’ici
+ la fin de l’année.
+  hyp: le chef principal de la à la fin des années 1940, a été à la fin des années 1970.
+  ref: à la fin du siècle, le grand chef de la tribu est back auquel deux descendants portant le mê
+me nom.
+  hyp: la longue distance de la est devenue à la fin des années 1980.
+  ref: la des services a commencé à la fin des années 80, et la concurrence fondée sur les installa
+tions en 1992.
+  hyp: ratio de l'intensité de la fabrication (scian comparaison avec le secteur manufacturier
+  ref: ratio de l'intensité manufacturière établissements principaux 1994-2003 fonderies (scian com
+paraison au secteur de la fabrication
+  hyp: le sous-alinéa de la version française du même règlement est modifié de manière à en rendre
+conforme à la version française.
+  ref: le sous-alinéa de la version française du règlement est modifié pour être conforme à la vers
+ion anglaise.
+  New best BLEU: 23.54 — saved to best_model.pt
+Epoch 7
+Train epoch 7:  27%|████████████████████▊                                                        |
+3807/14062 [09:37<25:57,  6.58it/s, avg=2.2622, loss=2.1441]Train epoch 7:  27%|███████████████████
+█▊                                                        | 3808/14062 [09:37<25:54,  6.60it/s, avg
+=2.2622, loss=2.0952]Train epoch 7:  27%|████████████████████▉
+                   | 3813/14062 [09:38<25:56,  6.59it/s, avg=2.2621, loss=2.2406]Train loss: 2.3209
+49 | Accuracy: 52.3265%
+
+Test loss: 2.537173 | Accuracy: 51.3504%
+BLEU: 23.49
+  hyp: en outre, le premier rapport du groupe consultatif de la commission consultative du gouverne
+ment du canada devrait être terminé à la fin de l’année.
+  ref: il est également prévu que le groupe conseil sur le ged présentera son premier rapport d’ici
+ la fin de l’année.
+  hyp: le chef principal de la sadc à la fin des années a été qui a été par deux descendants portan
+t le même nom.
+  ref: à la fin du siècle, le grand chef de la tribu est back auquel deux descendants portant le mê
+me nom.
+  hyp: la longue distance, à la fin des années 1990, a commencé à se lancer en 1992.
+  ref: la des services a commencé à la fin des années 80, et la concurrence fondée sur les installa
+tions en 1992.
+  hyp: rapport sur l'intensité de la fabrication établissements principaux (scian comparaison avec
+le secteur de la fabrication
+  ref: ratio de l'intensité manufacturière établissements principaux 1994-2003 fonderies (scian com
+paraison au secteur de la fabrication
+  hyp: le sous-alinéa de la version française du même règlement est modifié pour le rendre conforme
+ à la version anglaise.
+  ref: le sous-alinéa de la version française du règlement est modifié pour être conforme à la vers
+ion anglaise.
+Epoch 8
+Train loss: 2.284351 | Accuracy: 52.7933%
+
+Test loss: 2.551911 | Accuracy: 51.3751%
+BLEU: 24.45
+  hyp: de plus, le premier rapport du groupe consultatif du ged devrait être terminé à la fin de l'
+année.
+  ref: il est également prévu que le groupe conseil sur le ged présentera son premier rapport d’ici
+ la fin de l’année.
+  hyp: le chef chef chef de file de la à la fin des années 1970 a été qui a réussi 2 descendants po
+rtant le même nom.
+  ref: à la fin du siècle, le grand chef de la tribu est back auquel deux descendants portant le mê
+me nom.
+  hyp: la longue distance de a commencé à la fin des années 1980. la compétition a débuté en 1992.
+  ref: la des services a commencé à la fin des années 80, et la concurrence fondée sur les installa
+tions en 1992.
+  hyp: ratio de l'intensité manufacturière 1994-2003 principaux (scian comparaison avec le secteur
+manufacturier
+  ref: ratio de l'intensité manufacturière établissements principaux 1994-2003 fonderies (scian com
+paraison au secteur de la fabrication
+  hyp: le sous-alinéa de la version française du même règlement est modifié pour le rendre conforme
+ à la version anglaise.
+  ref: le sous-alinéa de la version française du règlement est modifié pour être conforme à la vers
+ion anglaise.
+  New best BLEU: 24.45 — saved to best_model.pt
+Epoch 9
+Train epoch 9:  50%|██████████████████████████████████████▋                                      |
+7075/14062 [1Train epoch 9:  50%|███████████████               | 7075/14062 [17:53<17:41,  6.58it/s
+, avg=2.2141, loss=2.2896]Train loss: 2.252054 | Accuracy: 53.2041%
+
+Test loss: 2.538330 | Accuracy: 51.4166%
+BLEU: 23.17
+  hyp: de plus, le premier rapport du groupe consultatif du ged devrait être publié d'ici la fin de
+ l'année.
+  ref: il est également prévu que le groupe conseil sur le ged présentera son premier rapport d’ici
+ la fin de l’année.
+  hyp: le chef principal de la mrc à la fin des années 1980 était de retour qui était par deux desc
+endants portant le même nom.
+  ref: à la fin du siècle, le grand chef de la tribu est back auquel deux descendants portant le mê
+me nom.
+  hyp: la longue distance, à la fin des années 1990, commence en 1992.
+  ref: la des services a commencé à la fin des années 80, et la concurrence fondée sur les installa
+tions en 1992.
+  hyp: ratio de l’intensité manufacturière 1994-2003 fabrication rapport entre les principaux établ
+issements (scian comparaison avec le secteur manufacturier
+  ref: ratio de l'intensité manufacturière établissements principaux 1994-2003 fonderies (scian com
+paraison au secteur de la fabrication
+  hyp: le sous-alinéa de la version française du même règlement est modifié pour y inclure la versi
+on anglaise.
+  ref: le sous-alinéa de la version française du règlement est modifié pour être conforme à la vers
+ion anglaise.
+ubuntu@ip-172-31-36-161:~/project$ nohup python rope.py > train.log2 2>&1 &
+
+[1] 7798
+ubuntu@ip-172-31-36-161:~/project$ kill 7798
+-bash: kill: (7798) - No such process
+[1]+  Exit 127                nohup python rope.py > train.log2 2>&1
+ubuntu@ip-172-31-36-161:~/project$ python3 rope.py > train.log2 2>&1
+ubuntu@ip-172-31-36-161:~/project$ python3 rope.py
+Traceback (most recent call last):
+  File "/home/ubuntu/project/rope.py", line 3, in <module>
+    import sacrebleu
+ModuleNotFoundError: No module named 'sacrebleu'
+ubuntu@ip-172-31-36-161:~/project$ pip install sacrebleu
+Command 'pip' not found, but can be installed with:
+sudo apt install python3-pip
+ubuntu@ip-172-31-36-161:~/project$ pip3 install sacrebleu
+Command 'pip3' not found, but can be installed with:
+sudo apt install python3-pip
+ubuntu@ip-172-31-36-161:~/project$ opt/pytorch/bin/python rope.py
+
+-bash: opt/pytorch/bin/python: No such file or directory
+ubuntu@ip-172-31-36-161:~/project$ /opt/pytorch/bin/python rope.py
+
+/opt/pytorch/lib/python3.13/site-packages/torch/cuda/__init__.py:65: FutureWarning: The pynvml pack
+age is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, ple
+ase report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+Total Parameters: 51714304
+Trainable Parameters: 51714304
+Traceback (most recent call last):
+  File "/home/ubuntu/project/rope.py", line 378, in <module>
+    main()
+    ~~~~^^
+  File "/home/ubuntu/project/rope.py", line 365, in main
+    train_dataloader, test_dataloader, vocab = get_translation_dataloader(
+                                               ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        file_path, vocab_size=vocabulary_size, max_len=max_length, batch_size=batch_size,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        cache_path=os.path.join(SCRIPT_DIR, "data_cache.pt"))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/project/reference_data.py", line 93, in get_translation_dataloader
+    for chunk in reader:
+                 ^^^^^^
+  File "/opt/pytorch/lib/python3.13/site-packages/pandas/io/parsers/readers.py", line 1843, in __ne
+xt__
+    return self.get_chunk()
+           ~~~~~~~~~~~~~~^^
+  File "/opt/pytorch/lib/python3.13/site-packages/pandas/io/parsers/readers.py", line 1985, in get_
+chunk
+    return self.read(nrows=size)
+           ~~~~~~~~~^^^^^^^^^^^^
+  File "/opt/pytorch/lib/python3.13/site-packages/pandas/io/parsers/readers.py", line 1923, in read
+    ) = self._engine.read(  # type: ignore[attr-defined]
+        ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        nrows
+        ^^^^^
+    )
+    ^
+  File "/opt/pytorch/lib/python3.13/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 234,
+ in read
+    chunks = self._reader.read_low_memory(nrows)
+  File "pandas/_libs/parsers.pyx", line 850, in pandas._libs.parsers.TextReader.read_low_memory
+  File "pandas/_libs/parsers.pyx", line 905, in pandas._libs.parsers.TextReader._read_rows
+  File "pandas/_libs/parsers.pyx", line 874, in pandas._libs.parsers.TextReader._tokenize_rows
+  File "pandas/_libs/parsers.pyx", line 891, in pandas._libs.parsers.TextReader._check_tokenize_sta
+tus
+  File "pandas/_libs/parsers.pyx", line 2061, in pandas._libs.parsers.raise_parser_error
+pandas.errors.ParserError: Error tokenizing data. C error: EOF inside string starting at row 155486
+6
+ubuntu@ip-172-31-36-161:~/project$ /opt/pytorch/bin/python rope.py
+
+/opt/pytorch/lib/python3.13/site-packages/torch/cuda/__init__.py:65: FutureWarning: The pynvml pack
+age is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, ple
+ase report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+Total Parameters: 51714304
+Trainable Parameters: 51714304
+Traceback (most recent call last):
+  File "/home/ubuntu/project/rope.py", line 378, in <module>
+    main()
+    ~~~~^^
+  File "/home/ubuntu/project/rope.py", line 365, in main
+    train_dataloader, test_dataloader, vocab = get_translation_dataloader(
+                                               ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        file_path, vocab_size=vocabulary_size, max_len=max_length, batch_size=batch_size,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        cache_path=os.path.join(SCRIPT_DIR, "data_cache.pt"))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/project/reference_data.py", line 93, in get_translation_dataloader
+    for chunk in reader:
+                 ^^^^^^
+  File "/opt/pytorch/lib/python3.13/site-packages/pandas/io/parsers/readers.py", line 1843, in __ne
+xt__
+    return self.get_chunk()
+           ~~~~~~~~~~~~~~^^
+  File "/opt/pytorch/lib/python3.13/site-packages/pandas/io/parsers/readers.py", line 1985, in get_
+chunk
+    return self.read(nrows=size)
+           ~~~~~~~~~^^^^^^^^^^^^
+  File "/opt/pytorch/lib/python3.13/site-packages/pandas/io/parsers/readers.py", line 1923, in read
+    ) = self._engine.read(  # type: ignore[attr-defined]
+        ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        nrows
+        ^^^^^
+    )
+    ^
+  File "/opt/pytorch/lib/python3.13/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 234,
+ in read
+    chunks = self._reader.read_low_memory(nrows)
+  File "pandas/_libs/parsers.pyx", line 850, in pandas._libs.parsers.TextReader.read_low_memory
+  File "pandas/_libs/parsers.pyx", line 905, in pandas._libs.parsers.TextReader._read_rows
+  File "pandas/_libs/parsers.pyx", line 874, in pandas._libs.parsers.TextReader._tokenize_rows
+  File "pandas/_libs/parsers.pyx", line 891, in pandas._libs.parsers.TextReader._check_tokenize_sta
+tus
+  File "pandas/_libs/parsers.pyx", line 2061, in pandas._libs.parsers.raise_parser_error
+pandas.errors.ParserError: Error tokenizing data. C error: EOF inside string starting at row 155486
+6
+ubuntu@ip-172-31-36-161:~/project$  grep "on_bad_lines" ~/project/reference_data.py
+
+    reader = pd.read_csv(csv_path, chunksize=chunk_size, usecols=['en', 'fr'], on_bad_lines='skip')
+ubuntu@ip-172-31-36-161:~/project$ /opt/pytorch/bin/python rope.py
+/opt/pytorch/lib/python3.13/site-packages/torch/cuda/__init__.py:65: FutureWarning: The pynvml pack
+age is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, ple
+ase report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+Total Parameters: 51714304
+Trainable Parameters: 51714304
+Traceback (most recent call last):
+  File "/home/ubuntu/project/rope.py", line 378, in <module>
+    main()
+    ~~~~^^
+  File "/home/ubuntu/project/rope.py", line 365, in main
+    train_dataloader, test_dataloader, vocab = get_translation_dataloader(
+                                               ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        file_path, vocab_size=vocabulary_size, max_len=max_length, batch_size=batch_size,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        cache_path=os.path.join(SCRIPT_DIR, "data_cache.pt"))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/project/reference_data.py", line 93, in get_translation_dataloader
+    for chunk in reader:
+                 ^^^^^^
+  File "/opt/pytorch/lib/python3.13/site-packages/pandas/io/parsers/readers.py", line 1843, in __ne
+xt__
+    return self.get_chunk()
+           ~~~~~~~~~~~~~~^^
+  File "/opt/pytorch/lib/python3.13/site-packages/pandas/io/parsers/readers.py", line 1985, in get_
+chunk
+    return self.read(nrows=size)
+           ~~~~~~~~~^^^^^^^^^^^^
+  File "/opt/pytorch/lib/python3.13/site-packages/pandas/io/parsers/readers.py", line 1923, in read
+    ) = self._engine.read(  # type: ignore[attr-defined]
+        ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        nrows
+        ^^^^^
+    )
+    ^
+  File "/opt/pytorch/lib/python3.13/site-packages/pandas/io/parsers/python_parser.py", line 252, in
+ read
+    content = self._get_lines(rows)
+  File "/opt/pytorch/lib/python3.13/site-packages/pandas/io/parsers/python_parser.py", line 1127, i
+n _get_lines
+    new_row = next(self.data)
+_csv.Error: unexpected end of data
+ubuntu@ip-172-31-36-161:~/project$ rm ~/project/data_cache.pt
+
+rm: cannot remove '/home/ubuntu/project/data_cache.pt': No such file or directory
+ubuntu@ip-172-31-36-161:~/project$ rm /data_cache.pt
+
+rm: cannot remove '/data_cache.pt': No such file or directory
+ubuntu@ip-172-31-36-161:~/project$ rm data_cache.pt
+
+rm: cannot remove 'data_cache.pt': No such file or directory
+ubuntu@ip-172-31-36-161:~/project$ /opt/pytorch/bin/python rope.py
+
+/opt/pytorch/lib/python3.13/site-packages/torch/cuda/__init__.py:65: FutureWarning: The pynvml pack
+age is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, ple
+ase report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+Total Parameters: 51714304
+Trainable Parameters: 51714304
+Traceback (most recent call last):
+  File "/home/ubuntu/project/rope.py", line 378, in <module>
+    main()
+    ~~~~^^
+  File "/home/ubuntu/project/rope.py", line 365, in main
+    train_dataloader, test_dataloader, vocab = get_translation_dataloader(
+                                               ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        file_path, vocab_size=vocabulary_size, max_len=max_length, batch_size=batch_size,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        cache_path=os.path.join(SCRIPT_DIR, "data_cache.pt"))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/project/reference_data.py", line 93, in get_translation_dataloader
+    for chunk in reader:
+                 ^^^^^^
+  File "/opt/pytorch/lib/python3.13/site-packages/pandas/io/parsers/readers.py", line 1843, in __ne
+xt__
+    return self.get_chunk()
+           ~~~~~~~~~~~~~~^^
+  File "/opt/pytorch/lib/python3.13/site-packages/pandas/io/parsers/readers.py", line 1985, in get_
+chunk
+    return self.read(nrows=size)
+           ~~~~~~~~~^^^^^^^^^^^^
+  File "/opt/pytorch/lib/python3.13/site-packages/pandas/io/parsers/readers.py", line 1923, in read
+    ) = self._engine.read(  # type: ignore[attr-defined]
+        ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        nrows
+        ^^^^^
+    )
+    ^
+  File "/opt/pytorch/lib/python3.13/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 234,
+ in read
+    chunks = self._reader.read_low_memory(nrows)
+  File "pandas/_libs/parsers.pyx", line 850, in pandas._libs.parsers.TextReader.read_low_memory
+  File "pandas/_libs/parsers.pyx", line 905, in pandas._libs.parsers.TextReader._read_rows
+  File "pandas/_libs/parsers.pyx", line 874, in pandas._libs.parsers.TextReader._tokenize_rows
+  File "pandas/_libs/parsers.pyx", line 891, in pandas._libs.parsers.TextReader._check_tokenize_sta
+tus
+  File "pandas/_libs/parsers.pyx", line 2061, in pandas._libs.parsers.raise_parser_error
+pandas.errors.ParserError: Error tokenizing data. C error: EOF inside string starting at row 155486
+6
+ubuntu@ip-172-31-36-161:~/project$ /opt/pytorch/bin/python rope.py
+
+/opt/pytorch/lib/python3.13/site-packages/torch/cuda/__init__.py:65: FutureWarning: The pynvml pack
+age is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, ple
+ase report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+Total Parameters: 51714304
+Trainable Parameters: 51714304
+Scanned 1545657 filtered pairs, kept 1545657.
+Saving preprocessed data to /home/ubuntu/project/data_cache.pt ...
+Epoch 0
+Train epoch 0:   3%|██▎                                                                           |
+ 628/21735 [01:35<52:59,  6.64it/s, avg=6.1581, loss=5.3628]^CTraceback (most recent call last):
+  File "/home/ubuntu/project/rope.py", line 378, in <module>
+    main()
+    ~~~~^^
+  File "/home/ubuntu/project/rope.py", line 369, in main
+      train_loss_list, train_acc_list, test_loss_list, test_acc_list, bleu_list = run(
+                                                                                  ~~~^
+        num_epochs, model, train_dataloader, test_dataloader, optimizer, criterion,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        vocab, max_length
+        ^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/ubuntu/project/rope.py", line 299, in run
+    train_loss, train_acc = train(model, train_loader, epoch, optimizer, criterion)
+                            ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/project/rope.py", line 252, in train
+    train_avg_loss += loss.item()
+                      ~~~~~~~~~^^
+KeyboardInterrupt
+
+
+ubuntu@ip-172-31-36-161:~/project$ rm data_cache.pt
+
+ubuntu@ip-172-31-36-161:~/project$ /opt/pytorch/bin/python rope.py
+
+/opt/pytorch/lib/python3.13/site-packages/torch/cuda/__init__.py:65: FutureWarning: The pynvml pack
+age is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, ple
+ase report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+Total Parameters: 51714304
+Trainable Parameters: 51714304
+Scanned 1552534 filtered pairs, kept 1552534.
+^[[A^[[A^[[B^[[B^[[B^[[B^[[BSaving preprocessed data to /home/ubuntu/project/data_cache.pt ...
+Epoch 0
+Train epoch 0:   0%|▏                                                                            |
+52/21832 [00:12<1:20:16,  4.52it/s, avg=8.0047, loss=6.8242]^CTraceback (most recent call last):
+  File "/home/ubuntu/project/rope.py", line 378, in <module>
+    main()
+    ~~~~^^
+  File "/home/ubuntu/project/rope.py", line 369, in main
+      train_loss_list, train_acc_list, test_loss_list, test_acc_list, bleu_list = run(
+                                                                                  ~~~^
+        num_epochs, model, train_dataloader, test_dataloader, optimizer, criterion,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        vocab, max_length
+        ^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/ubuntu/project/rope.py", line 299, in run
+    train_loss, train_acc = train(model, train_loader, epoch, optimizer, criterion)
+                            ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/project/rope.py", line 244, in train
+    num_correct += ((predictions == target) & french_mask).sum().item()
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+KeyboardInterrupt
+
+
+ubuntu@ip-172-31-36-161:~/project$ /opt/pytorch/bin/python rope.py
+
+/opt/pytorch/lib/python3.13/site-packages/torch/cuda/__init__.py:65: FutureWarning: The pynvml pack
+age is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, ple
+ase report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+Total Parameters: 51714304
+Trainable Parameters: 51714304
+Loading preprocessed data from /home/ubuntu/project/data_cache.pt ...
+Epoch 0
+Train epoch 0:  57%|███████████████████████████████████████████▌                                | 1
+2506/21832 [46:09<Train epoch 0:  57%|███████████████████▍              | 12506/21832 [46:09<34:24,
+  4.52it/s, avg=4.3100, loss=3.5354]Train epoch 0:  78%|████████████████████████▊       | 16945/218
+32 [1:02:31<18:03,  4.51it/s, avg=4.1476, loss=3.9077]Train epoch 0:  78%|████████████████████████▊
+       | 16946/21832 [1:02:31<18:02,  4.51it/s, avg=4.1476, loss=3.8070]Train epoch 0:  78%|███████
+█████████████████▊       | 16957/21832 [1:02:33<17:58,  4.52it/s, avg=4.1473, loss=3.7540]Train epo
+ch 0:  78%|████████████████████████▊       | 16960/21832 [1:02:34<17:59,  4.51it/s, avg=4.1472, los
+s=3.8789]Train loss: 4.018107 | Accuracy: 34.4168%
+
+Test loss: 3.429089 | Accuracy: 40.4543%
+BLEU: 9.51
+  hyp: l’exportateur doit veiller à ce qu'une déclaration de biens culturels soit présentée en vert
+u de la autorisation de chaque
+  ref: "il incombe à l'exportateur de veiller à ce que chaque expédition vers l'étranger
+  hyp: the government of canada has committed to developing a national strategy for the development
+ of a national strategy for the development of official-language communities and the canadian franc
+ophonie."
+  ref: goods that are subject to the agreement on internal trade must be posted on the government e
+lectronic tendering system
+  hyp: the applicant must submit a copy of the original application form."
+  ref: canada would have to accept a reproduction contained in a square of ii) canada could not req
+uire drawings for color as could be required under
+  hyp: and
+  ref: riparian basics
+  hyp: évaluation sommative du programme de formation dans le cadre de l'évaluation du programme na
+tional de formation des arts organisations artistiques professionnels de la recherche ekos a été co
+mmandé par patrimoine canadien (pch) pour mener une évaluation sommative du programme national de f
+ormation dans le domaine de la formation dans le domaine de la formation dans le domaine de la form
+ation en arts
+  ref: évaluation sommative du programme national de formation dans le secteur des arts guide d’ent
+revue représentants professionnelles du secteur des arts les associés de recherche ekos ont reçu de
+ patrimoine canadien (pch) le mandat d’entreprendre une évaluation sommative du programme national
+de formation dans le secteur des arts
+  New best BLEU: 9.51 — saved to best_model.pt
+Epoch 1
+Train loss: 3.297929 | Accuracy: 41.3998%
+
+Test loss: 3.179036 | Accuracy: 43.4897%
+BLEU: 12.44
+  hyp: l’exportateur doit s’assurer qu’une déclaration écrite de biens culturels ait été faite chaq
+ue fois par des objets de licence de licence de licence.
+  ref: "il incombe à l'exportateur de veiller à ce que chaque expédition vers l'étranger
+  hyp: in the region
+  ref: goods that are subject to the agreement on internal trade must be posted on the government e
+lectronic tendering system
+  hyp: ii) the use of the iso language as a
+  ref: canada would have to accept a reproduction contained in a square of ii) canada could not req
+uire drawings for color as could be required under
+  hyp:
+  ref: riparian basics
+  hyp: évaluation sommative du programme national de formation dans le secteur des arts guide d’ent
+revue représentants d'organismes professionnels de la formation professionnelle ekos research assoc
+iates a confié à patrimoine canadien (pch) de mener une évaluation sommative du programme national
+de formation dans le secteur des arts
+  ref: évaluation sommative du programme national de formation dans le secteur des arts guide d’ent
+revue représentants professionnelles du secteur des arts les associés de recherche ekos ont reçu de
+ patrimoine canadien (pch) le mandat d’entreprendre une évaluation sommative du programme national
+de formation dans le secteur des arts
+  New best BLEU: 12.44 — saved to best_model.pt
+Epoch 2
+Train loss: 3.079363 | Accuracy: 43.8213%
+
+Test loss: 3.080769 | Accuracy: 44.8137%
+BLEU: 14.20
+  hyp: l’exportateur doit s'assurer qu'une déclaration de biens culturels remplie soit présentée en
+ vertu de la loi sur le permis de conduire
+  ref: "il incombe à l'exportateur de veiller à ce que chaque expédition vers l'étranger
+  hyp: the canadian human rights commission released a report outlining the roles of the commission
+ on human rights and the human rights commission
+  ref: goods that are subject to the agreement on internal trade must be posted on the government e
+lectronic tendering system
+  hyp: the applicant must be notified by the applicant stating that the applicant must be notified
+by the applicant stating that the applicant must be notified by the applicant."
+  ref: canada would have to accept a reproduction contained in a square of ii) canada could not req
+uire drawings for color as could be required under
+  hyp: and
+  ref: riparian basics
+  hyp: évaluation sommative du programme national de formation dans le secteur des arts guide d’ent
+revue représentants des associations professionnelles ekos research associates ekos research associ
+ates a été commandée par patrimoine canadien (pch)
+  ref: évaluation sommative du programme national de formation dans le secteur des arts guide d’ent
+revue représentants professionnelles du secteur des arts les associés de recherche ekos ont reçu de
+ patrimoine canadien (pch) le mandat d’entreprendre une évaluation sommative du programme national
+de formation dans le secteur des arts
+  New best BLEU: 14.20 — saved to best_model.pt
+Epoch 3
+Train loss: 2.950005 | Accuracy: 45.2897%
+
+Test loss: 3.044904 | Accuracy: 45.5114%
+BLEU: 14.14
+  hyp: l’exportateur doit veiller à ce que une déclaration de biens culturels ait été exigée dans c
+haque expédition en vertu de la loi sur le licence.
+  ref: "il incombe à l'exportateur de veiller à ce que chaque expédition vers l'étranger
+  hyp: if the importer realizes that the goods are not subject to a penalty
+  ref: goods that are subject to the agreement on internal trade must be posted on the government e
+lectronic tendering system
+  hyp: the ctmo would not have to be notified of the ib if the ctmo had to notify the ib if the ctm
+o had to notify the ib if the ctmo had not been notified of the ib if the ib had not been notified
+of the ib if the ctmo had not been notified of the ib if the ctmo had not been notified of the ib i
+f the ctmo would notify the ib if it was not necessary for the ib if it was not necessary to notify
+ the ib if it was not
+  ref: canada would have to accept a reproduction contained in a square of ii) canada could not req
+uire drawings for color as could be required under
+  hyp: climate
+  ref: riparian basics
+  hyp: évaluation sommative du programme national de formation dans le secteur des arts guide d’ent
+revue représentants d'associations professionnelles des associations professionnelles ekos research
+ associates a reçu une évaluation sommative du programme national de formation dans le secteur des
+arts
+  ref: évaluation sommative du programme national de formation dans le secteur des arts guide d’ent
+revue représentants professionnelles du secteur des arts les associés de recherche ekos ont reçu de
+ patrimoine canadien (pch) le mandat d’entreprendre une évaluation sommative du programme national
+de formation dans le secteur des arts
+Epoch 4
+Train loss: 2.859062 | Accuracy: 46.3357%
+
+Test loss: 2.994393 | Accuracy: 46.3186%
+BLEU: 15.56
+  hyp: l’exportateur doit s'assurer que la déclaration de biens culturels doit être répartie de cha
+que objets
+  ref: "il incombe à l'exportateur de veiller à ce que chaque expédition vers l'étranger
+  hyp: the canadian encyclopedia
+  ref: goods that are subject to the agreement on internal trade must be posted on the government e
+lectronic tendering system
+  hyp: the tlt is not a requirement to provide the names of the wares listed in ctma
+  ref: canada would have to accept a reproduction contained in a square of ii) canada could not req
+uire drawings for color as could be required under
+  hyp:
+  ref: riparian basics
+  hyp: évaluation sommative du programme national de formation dans le secteur des arts guide d'ent
+revue associés aux arts associations professionnelles ekos inc.
+  ref: évaluation sommative du programme national de formation dans le secteur des arts guide d’ent
+revue représentants professionnelles du secteur des arts les associés de recherche ekos ont reçu de
+ patrimoine canadien (pch) le mandat d’entreprendre une évaluation sommative du programme national
+de formation dans le secteur des arts
+  New best BLEU: 15.56 — saved to best_model.pt
+Epoch 5
+Train loss: 2.789370 | Accuracy: 47.1532%
+
+Test loss: 2.969754 | Accuracy: 46.7626%
+BLEU: 16.29
+  hyp: l'exportateur doit veiller à ce qu'une déclaration de licence culturelle dûment remplie à ch
+aque expédition de biens en vertu de l'autorisation du permis.
+  ref: "il incombe à l'exportateur de veiller à ce que chaque expédition vers l'étranger
+  hyp: the canadian association of broadcasters and the ctf is responsible for the ctf
+  ref: goods that are subject to the agreement on internal trade must be posted on the government e
+lectronic tendering system
+  hyp: the ctmo would be required to submit a claim for the filing of a claim for the filing of a c
+laim for the filing of a claim for the filing of a claim for the filing of a claim for the filing o
+f a claim for the filing of the claim for the filing of a claim for the filing of the claim for the
+ filing of the claim for the filing of the claim for the filing of section 15 of the revendication
+of the filing of the revendication of the filing of the revendication
+  ref: canada would have to accept a reproduction contained in a square of ii) canada could not req
+uire drawings for color as could be required under
+  hyp: and
+  ref: riparian basics
+  hyp: évaluation sommative du programme national de formation dans le secteur des arts guide d’ent
+revue représentants des associations professionnelles sonore recherches ekos research associates a
+été commandé par patrimoine canadien pour entreprendre une évaluation sommative du programme nation
+al de formation dans le secteur des arts
+  ref: évaluation sommative du programme national de formation dans le secteur des arts guide d’ent
+revue représentants professionnelles du secteur des arts les associés de recherche ekos ont reçu de
+ patrimoine canadien (pch) le mandat d’entreprendre une évaluation sommative du programme national
+de formation dans le secteur des arts
+  New best BLEU: 16.29 — saved to best_model.pt
+Epoch 6
+Train epoch 6:  55%|██████████████████▋               | 12002/21832 [44:14<36:14,  4.52it/s, avg=2.
+7025, loss=2.8995]Train epoch 6:  59%|████████████████████▏             | 12949/21832 [47:44<32:48,
+  4.51it/s, avg=2.7060, loss=2.6492]Train epoch 6:  59%|████████████████████▏             | 12950/2
+1832 [47:44<32:48,  4.51it/s, avg=2.7061, loss=3.1475]Train epoch 6:  59%|████████████████████▏
+         | 12954/21832 [47:45<32:43,  4.52it/s, avg=2.7061, loss=2.9743]Train epoch 6:  60%|███████
+█████████████▏             | 12996/21832 [47:54<32:33,  4.52it/s, avg=2.7063, loss=2.7318]Train epo
+ch 6:  60%|████████████████████▏             | 12997/21832 [47:54<32:34,  4.52it/s, avg=2.7063, los
+s=3.1095]Train epoch 6:  60%|████████████████████▏             | 12998/21832 [47:54<32:34,  4.52it/
+s, avg=2.7063, loss=2.3700]Train epoch 6:  60%|████████████████████▏             | 12999/21832 [47:
+55<32:35,  4.52it/s, avg=2.7063, loss=2.5854]Train epoch 6:  60%|████████████████████▏
+| 13001/21832 [47:55<32:38,  4.51it/s, avg=2.7062, loss=2.5665]Train epoch 6:  60%|████████████████
+████▎             | 13008/21832 [47:57<32:34,  4.52it/s, avg=2.7061, loss=2.4647]Train epoch 6:  60
+%|████████████████████▎             | 13009/21832 [47:57<32:33,  4.52it/s, avg=2.Train epoch 6:  60
+%|███████████████████████████████████                       | 13181/21832 [48:35<31:50,  4.53it/s,
+avg=2.7066, loss=2.7363]Train epoch 6:  60%|███████████████████████████████████
+   | 13185/21832 [48:36<31:51,  4.52it/s, avg=2.7066, loss=2.6518]Train epoch 6:  60%|█████████████
+██████████████████████                       | 13186/21832 [48:36<31:52,  4.52it/s, avg=2.7067, los
+s=2.8348]Train epoch 6:  60%|███████████████████████████████████                       | 13188/2183
+2 [48:36<31:53,  4.52it/s, avg=2.7067, loss=2.5285]Train epoch 6:  61%|████████████████████████████
+███████                       | 13210/21832 [48:41<31:45,  4.52it/s, avg=2.7068, loss=2.8479]Train
+epoch 6:  61%|███████████████████████████████████                       | 13211/21832 [48:42<31:44,
+  4.53it/s, avg=2.7068, loss=2.9973]Train epoch 6:  61%|███████████████████████████████████
+               | 13214/21832 [48:42<31:47,  4.52it/s, avg=2.7068, loss=2.3953]Train epoch 6:  61%|█
+██████████████████████████████████▎                      | 13281/21832 [48:57<31:35,  4.51it/s, avg
+=2.7072, loss=3.0368]Train epoch 6:  61%|███████████████████████████████████▎
+| 13283/21832 [48:58<31:36,  4.51it/s, avg=2.7072, loss=2.7920]Train epoch 6:  61%|████████████████
+███████████████████▎                      | 13293/21832 [49:00<31:34,  4.51it/s, avg=2.7072, loss=2
+.5373]Train epoch 6:  61%|███████████████████████████████████▎                      | 13294/21832 [
+49:00<31:34,  4.51it/s, avg=2.7072, loss=2.8562]Train epoch 6:  61%|███████████████████████████████
+████▎                      | 13295/21832 [49:00<31:33,  4.51it/s, avg=2.7072, loss=2.8005]Train epo
+ch 6:  61%|███████████████████████████████████▎                      | 13300/21832 [49:01<31:29,  4
+.52it/s, avg=2.7071, loss=2.7007]Train epoch 6:  61%|███████████████████████████████████▎
+            | 13301/21832 [49:02<31:28,  4.52it/s, avg=2.7071, loss=2.5086]Train epoch 6:  61%|████
+███████████████████████████████▎                      | 13302/21832 [49:02<31:28,  4.52it/s, avg=2.
+7071, loss=2.5710]Train epoch 6:  61%|███████████████████████████████████▌                      | 1
+3409/21832 [49:25<31:05,  4.51it/s, avg=2.707Train epoch 6:  61%|████████████████████▉
+| 13409/21832 [49:26<31:05,  4.51it/s, avg=2.7074, loss=3.1451]Train epoch 6:  62%|████████████████
+████▉             | 13431/21832 [49:30<31:01,  4.51it/s, avg=2.7075, loss=2.6002]Train epoch 6:  62
+%|████████████████████▉             | 13432/21832 [49:31<31:02,  4.51it/s, avg=2.7075, loss=2.8064]
+Train epoch 6:  62%|████████████████████▉             | 13433/21832 [49:31<31:03,  4.51it/s, avg=2.
+7075, loss=2.8664]Train epoch 6:  62%|████████████████████▉             | 13434/21832 [49:31<31:03,
+  4.51it/s, avg=2.7075, loss=2.8140]Train epoch 6:  62%|█████████████████████▏            | 13568/2
+1832 [50:01<30:28,  4.52it/s, avg=2.7077, loss=2.9899]Train loss: 2.732305 | Accuracy: 47.8361%
+
+Test loss: 2.947891 | Accuracy: 47.2646%
+BLEU: 18.15
+  hyp: l’exportateur doit s’assurer qu’une licence de biens culturels hors taxes est exigée pour ch
+aque importation en vertu de la loi sur le permis.
+  ref: "il incombe à l'exportateur de veiller à ce que chaque expédition vers l'étranger
+  hyp: the canadian association of pediatric health centres in toronto
+  ref: goods that are subject to the agreement on internal trade must be posted on the government e
+lectronic tendering system
+  hyp: or ii) if the application forms are to be amended or eliminated."
+  ref: canada would have to accept a reproduction contained in a square of ii) canada could not req
+uire drawings for color as could be required under
+  hyp:
+  ref: riparian basics
+  hyp: évaluation sommative du programme national de formation dans le secteur des arts guide d’ent
+revue représentants d'associations professionnelles de la fédération professionnelle des arts ekos
+research associates a été commandé par patrimoine canadien (pch) afin de procéder à une évaluation
+sommative du programme national de formation dans le secteur des arts
+  ref: évaluation sommative du programme national de formation dans le secteur des arts guide d’ent
+revue représentants professionnelles du secteur des arts les associés de recherche ekos ont reçu de
+ patrimoine canadien (pch) le mandat d’entreprendre une évaluation sommative du programme national
+de formation dans le secteur des arts
+  New best BLEU: 18.15 — saved to best_model.pt
+Epoch 7
+Train loss: 2.684384 | Accuracy: 48.4119%
+
+Test loss: 2.937237 | Accuracy: 47.4251%
+BLEU: 16.71
+  hyp: l'exportateur doit s'assurer qu'une attestation culturelle remplie varie de chaque exportati
+on en vertu de l'autorisation du permis.
+  ref: "il incombe à l'exportateur de veiller à ce que chaque expédition vers l'étranger
+  hyp: the canadian wheat board (cwb) is responsible for overseeing compliance with the requirement
+s of the canadian wheat board act."
+  ref: goods that are subject to the agreement on internal trade must be posted on the government e
+lectronic tendering system
+  hyp: the ctmo would have to accept the applicant as amended by the applicant to accept the applic
+ant as amended by the applicant to accept the applicant as amended by the applicant to remain in ef
+fect (subsection of the patent act)."
+  ref: canada would have to accept a reproduction contained in a square of ii) canada could not req
+uire drawings for color as could be required under
+  hyp:
+  ref: riparian basics
+  hyp: évaluation sommative du programme national de formation dans le secteur des arts guide d’ent
+revue représentants des associations professionnelles sonore la recherche ekos a été commandée par
+patrimoine canadien (pch) pour entreprendre une évaluation sommative du programme national de forma
+tion dans le secteur des arts
+  ref: évaluation sommative du programme national de formation dans le secteur des arts guide d’ent
+revue représentants professionnelles du secteur des arts les associés de recherche ekos ont reçu de
+ patrimoine canadien (pch) le mandat d’entreprendre une évaluation sommative du programme national
+de formation dans le secteur des arts
+Epoch 8
+Train loss: 2.643071 | Accuracy: 48.9121%
+
+Test loss: 2.945767 | Accuracy: 47.4887%
+BLEU: 15.65
+  hyp: l’exportateur doit s’assurer qu’une déclaration de biens culturels rempli par chaque exporté
+ par le permis de provenance de l’objet d’un permis.
+  ref: "il incombe à l'exportateur de veiller à ce que chaque expédition vers l'étranger
+  hyp: the following is a list of the following
+  ref: goods that are subject to the agreement on internal trade must be posted on the government e
+lectronic tendering system
+  hyp: the registrar decides to reject the requirement of the requirement of the requirement of the
+ requirement of the requirement of the requirement of the iii) if the requirement of the requiremen
+t of the requirement of the requirement of the requirement of the requirement of the requirement of
+ the contracting party
+  ref: canada would have to accept a reproduction contained in a square of ii) canada could not req
+uire drawings for color as could be required under
+  hyp:
+  ref: riparian basics
+  hyp: évaluation sommative du programme national de formation dans le secteur des arts guide d’ent
+revue représentants des associations artistiques professionnels associés à la recherche ekos a été
+commandé par patrimoine canadien (pch)
+  ref: évaluation sommative du programme national de formation dans le secteur des arts guide d’ent
+revue représentants professionnelles du secteur des arts les associés de recherche ekos ont reçu de
+ patrimoine canadien (pch) le mandat d’entreprendre une évaluation sommative du programme national
+de formation dans le secteur des arts
+Epoch 9
+Train loss: 2.606449 | Accuracy: 49.3613%
+
+Test loss: 2.929755 | Accuracy: 47.7332%
+BLEU: 16.88
+  hyp: l’exportateur doit s’assurer qu’une déclaration de licence culturelle dûment remplie est ven
+ue à l’exportation de biens culturels sous le contrôle.
+  ref: "il incombe à l'exportateur de veiller à ce que chaque expédition vers l'étranger
+  hyp: the canadian grain commission’s reviews the data collection methods used to determine the ov
+erall grain handling system and the handling of grain handled by grain elevators
+  ref: goods that are subject to the agreement on internal trade must be posted on the government e
+lectronic tendering system
+  hyp: the tlt
+  ref: canada would have to accept a reproduction contained in a square of ii) canada could not req
+uire drawings for color as could be required under
+  hyp:
+  ref: riparian basics
+  hyp: évaluation sommative du programme national de formation dans le secteur des arts guide d'ent
+revue des représentants d'associations professionnelles des associations de arts professionnels eko
+s research associates a été commandée par patrimoine canadien pour mener une évaluation sommative d
+u programme national de formation formation sur les arts
+  ref: évaluation sommative du programme national de formation dans le secteur des arts guide d’ent
+revue représentants professionnelles du secteur des arts les associés de recherche ekos ont reçu de
+ patrimoine canadien (pch) le mandat d’entreprendre une évaluation sommative du programme national
+de formation dans le secteur des arts
+ubuntu@ip-172-31-36-161:~/project$ /opt/pytorch/bin/python3 rope.py
+
+/opt/pytorch/lib/python3.13/site-packages/torch/cuda/__init__.py:65: FutureWarning: The pynvml pack
+age is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, ple
+ase report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+Total Parameters: 51714304
+Trainable Parameters: 51714304
+Traceback (most recent call last):
+  File "/home/ubuntu/project/rope.py", line 378, in <module>
+    main()
+    ~~~~^^
+  File "/home/ubuntu/project/rope.py", line 365, in main
+    train_dataloader, test_dataloader, vocab = get_translation_dataloader(
+                                               ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        file_path, vocab_size=vocabulary_size, max_len=max_length, batch_size=batch_size,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        cache_path=os.path.join(SCRIPT_DIR, "data_cache.pt"))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/project/reference_data.py", line 93, in get_translation_dataloader
+    for chunk in reader:
+                 ^^^^^^
+  File "/opt/pytorch/lib/python3.13/site-packages/pandas/io/parsers/readers.py", line 1843, in __ne
+xt__
+    return self.get_chunk()
+           ~~~~~~~~~~~~~~^^
+  File "/opt/pytorch/lib/python3.13/site-packages/pandas/io/parsers/readers.py", line 1985, in get_
+chunk
+    return self.read(nrows=size)
+           ~~~~~~~~~^^^^^^^^^^^^
+  File "/opt/pytorch/lib/python3.13/site-packages/pandas/io/parsers/readers.py", line 1923, in read
+    ) = self._engine.read(  # type: ignore[attr-defined]
+        ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        nrows
+        ^^^^^
+    )
+    ^
+  File "/opt/pytorch/lib/python3.13/site-packages/pandas/io/parsers/python_parser.py", line 252, in
+ read
+    content = self._get_lines(rows)
+  File "/opt/pytorch/lib/python3.13/site-packages/pandas/io/parsers/python_parser.py", line 1127, i
+n _get_lines
+    new_row = next(self.data)
+_csv.Error: unexpected end of data
+ubuntu@ip-172-31-36-161:~/project$ /opt/pytorch/bin/python3 rope.py
+
+/opt/pytorch/lib/python3.13/site-packages/torch/cuda/__init__.py:65: FutureWarning: The pynvml pack
+age is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, ple
+ase report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+Total Parameters: 51714304
+Trainable Parameters: 51714304
+Traceback (most recent call last):
+  File "/home/ubuntu/project/rope.py", line 378, in <module>
+    main()
+    ~~~~^^
+  File "/home/ubuntu/project/rope.py", line 365, in main
+    train_dataloader, test_dataloader, vocab = get_translation_dataloader(
+                                               ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        file_path, vocab_size=vocabulary_size, max_len=max_length, batch_size=batch_size,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        cache_path=os.path.join(SCRIPT_DIR, "data_cache.pt"))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/project/reference_data.py", line 93, in get_translation_dataloader
+    for chunk in reader:
+                 ^^^^^^
+  File "/opt/pytorch/lib/python3.13/site-packages/pandas/io/parsers/readers.py", line 1843, in __ne
+xt__
+    return self.get_chunk()
+           ~~~~~~~~~~~~~~^^
+  File "/opt/pytorch/lib/python3.13/site-packages/pandas/io/parsers/readers.py", line 1985, in get_
+chunk
+    return self.read(nrows=size)
+           ~~~~~~~~~^^^^^^^^^^^^
+  File "/opt/pytorch/lib/python3.13/site-packages/pandas/io/parsers/readers.py", line 1923, in read
+    ) = self._engine.read(  # type: ignore[attr-defined]
+        ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        nrows
+        ^^^^^
+    )
+    ^
+  File "/opt/pytorch/lib/python3.13/site-packages/pandas/io/parsers/python_parser.py", line 252, in
+ read
+    content = self._get_lines(rows)
+  File "/opt/pytorch/lib/python3.13/site-packages/pandas/io/parsers/python_parser.py", line 1127, i
+n _get_lines
+    new_row = next(self.data)
+_csv.Error: unexpected end of data
+ubuntu@ip-172-31-36-161:~/project$  scp -i ~/TransformerRope10701.pem reference_data.py ubuntu@18.2
+23.112.27:/home/ubuntu/project/
+  rm ~/project/data_cache.pt    ^C
+ubuntu@ip-172-31-36-161:~/project$  rm ~/project/data_cache.pt
+rm: cannot remove '/home/ubuntu/project/data_cache.pt': No such file or directory
+ubuntu@ip-172-31-36-161:~/project$ /opt/pytorch/bin/python3 rope.py
+/opt/pytorch/lib/python3.13/site-packages/torch/cuda/__init__.py:65: FutureWarning: The pynvml pack
+age is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, ple
+ase report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+Total Parameters: 51714304
+Trainable Parameters: 51714304
+Skipped 0 malformed rows.
+Scanned 1531040 filtered pairs, kept 1531040.
+Saving preprocessed data to /home/ubuntu/project/data_cache.pt ...
+Epoch 0
+Train loss: 3.034666 | Accuracy: 44.7151%
+
+Test loss: 2.368976 | Accuracy: 53.5475%
+BLEU: 23.99
+  hyp: dépenses prévues
+  ref: projection des revenus et des dépenses pour 1998 à 2001
+  hyp: le tribunal doit rendre une décision concernant les marchandises visées par la décision défi
+nitive de dumping ne pas plus tard dans les 120 jours suivant l'avis de l'adrc d'une décision provi
+soire.
+  ref: le tribunal doit rendre une décision à l'égard des marchandises visées par la décision défin
+itive de dumping, au plus tard 120 jours après l'avis de décision provisoire de l'adrc.
+  hyp: les recommandations de financement de la réunion nationale sont approuvées à un niveau de ha
+ute direction au niveau de la
+  ref: les recommandations de financement faites à la rencontre nationale sont approuvées au niveau
+ de la direction de téléfilm.
+  hyp: comme nous l’avons déjà mentionné, la présence importante autochtone au yukon est une dimens
+ion importante de la vie dans le territoire.
+  ref: des élections ont eu lieu récemment et les premiers signaux envoyés par le nouveau gouvernem
+ent ont été plutôt défavorables dans ce dossier.
+  hyp: une autre exemple est la principale compagnie du secteur qui compte 85 entreprises en europe
+ et en amérique du sud.
+  ref: la principale entreprise du secteur, qui compte 85 sociétés en europe, en en et en amérique
+du sud en est aussi un bon exemple.
+  New best BLEU: 23.99 — saved to best_model.pt
+Epoch 1
+Train loss: 2.302136 | Accuracy: 53.9216%
+
+Test loss: 2.161199 | Accuracy: 56.6292%
+BLEU: 25.24
+  hyp: revenus et dépenses prévues
+  ref: projection des revenus et des dépenses pour 1998 à 2001
+  hyp: le tribunal est tenu de rendre une conclusion, concernant les marchandises auxquelles la déc
+ision définitive de dumping a été non plus tard dans les 120 jours suivant l'avis de décision de l'
+adrc.
+  ref: le tribunal doit rendre une décision à l'égard des marchandises visées par la décision défin
+itive de dumping, au plus tard 120 jours après l'avis de décision provisoire de l'adrc.
+  hyp: les recommandations de financement de la réunion nationale sont approuvées à un niveau de di
+rection au niveau
+  ref: les recommandations de financement faites à la rencontre nationale sont approuvées au niveau
+ de la direction de téléfilm.
+  hyp: comme on l'a vu précédemment, la forte présence autochtone au yukon est une dimension import
+ante de la vie dans le territoire.
+  ref: des élections ont eu lieu récemment et les premiers signaux envoyés par le nouveau gouvernem
+ent ont été plutôt défavorables dans ce dossier.
+  hyp: un autre exemple est la principale entreprise du secteur qui compte 85 entreprises en europe
+, en afrique et en amérique du sud.
+  ref: la principale entreprise du secteur, qui compte 85 sociétés en europe, en en et en amérique
+du sud en est aussi un bon exemple.
+  New best BLEU: 25.24 — saved to best_model.pt
+Epoch 2
+Train loss: 2.118319 | Accuracy: 56.4981%
+
+Test loss: 2.059809 | Accuracy: 58.1607%
+BLEU: 28.14
+  hyp: revenus et dépenses
+  ref: projection des revenus et des dépenses pour 1998 à 2001
+  hyp: le tribunal est tenu de rendre une conclusion, concernant les marchandises auxquelles la déc
+ision définitive de dumping ne dépasse pas 120 jours après l'avis de décision provisoire de l'adrc.
+  ref: le tribunal doit rendre une décision à l'égard des marchandises visées par la décision défin
+itive de dumping, au plus tard 120 jours après l'avis de décision provisoire de l'adrc.
+  hyp: les recommandations de financement de la réunion nationale sont approuvées à un niveau de sa
+tisfaction à l'égard de la
+  ref: les recommandations de financement faites à la rencontre nationale sont approuvées au niveau
+ de la direction de téléfilm.
+  hyp: comme nous l'avons mentionné plus haut, la forte présence autochtone au yukon est une dimens
+ion importante de la vie dans le territoire.
+  ref: des élections ont eu lieu récemment et les premiers signaux envoyés par le nouveau gouvernem
+ent ont été plutôt défavorables dans ce dossier.
+  hyp: un autre exemple est la principale entreprise du secteur qui compte 85 sociétés en europe et
+ en amérique du sud.
+  ref: la principale entreprise du secteur, qui compte 85 sociétés en europe, en en et en amérique
+du sud en est aussi un bon exemple.
+  New best BLEU: 28.14 — saved to best_model.pt
+Epoch 3
+Train loss: 2.006962 | Accuracy: 58.0781%
+
+Test loss: 2.001626 | Accuracy: 59.1340%
+BLEU: 28.47
+  hyp: revenus et dépenses prévus
+  ref: projection des revenus et des dépenses pour 1998 à 2001
+  hyp: le tribunal doit rendre une conclusion concernant les marchandises auxquelles la décision dé
+finitive de dumping ne doit pas être rendue au plus tard 120 jours après l'avis de décision proviso
+ire de l'adrc.
+  ref: le tribunal doit rendre une décision à l'égard des marchandises visées par la décision défin
+itive de dumping, au plus tard 120 jours après l'avis de décision provisoire de l'adrc.
+  hyp: les recommandations de financement de la réunion nationale sont approuvées à un niveau de di
+rection au sein du
+  ref: les recommandations de financement faites à la rencontre nationale sont approuvées au niveau
+ de la direction de téléfilm.
+  hyp: comme nous l’avons mentionné précédemment, la forte présence autochtone dans le yukon est un
+e importante dimension de la vie dans le territoire.
+  ref: des élections ont eu lieu récemment et les premiers signaux envoyés par le nouveau gouvernem
+ent ont été plutôt défavorables dans ce dossier.
+  hyp: un autre exemple est la principale entreprise du secteur qui compte 85 entreprises en europe
+ en et en amérique du sud.
+  ref: la principale entreprise du secteur, qui compte 85 sociétés en europe, en en et en amérique
+du sud en est aussi un bon exemple.
+  New best BLEU: 28.47 — saved to best_model.pt
+Epoch 4
+Train loss: 1.926535 | Accuracy: 59.2386%
+
+Test loss: 1.962736 | Accuracy: 59.8525%
+BLEU: 30.51
+  hyp: revenus et dépenses prévues
+  ref: projection des revenus et des dépenses pour 1998 à 2001
+  hyp: le tribunal devra rendre des conclusions concernant les marchandises auxquelles la décision
+définitive de dumping ne dépasse pas 120 jours après l'avis de décision provisoire de l'adrc.
+  ref: le tribunal doit rendre une décision à l'égard des marchandises visées par la décision défin
+itive de dumping, au plus tard 120 jours après l'avis de décision provisoire de l'adrc.
+  hyp: les recommandations de financement de la réunion nationale sont approuvées à un niveau de di
+rection au sein de
+  ref: les recommandations de financement faites à la rencontre nationale sont approuvées au niveau
+ de la direction de téléfilm.
+  hyp: comme nous l'avons déjà dit, la forte présence autochtone au yukon est une dimension importa
+nte de la vie sur le territoire.
+  ref: des élections ont eu lieu récemment et les premiers signaux envoyés par le nouveau gouvernem
+ent ont été plutôt défavorables dans ce dossier.
+  hyp: un autre exemple est la principale entreprise du secteur qui compte 85 entreprises en europe
+, en et en amérique du sud.
+  ref: la principale entreprise du secteur, qui compte 85 sociétés en europe, en en et en amérique
+du sud en est aussi un bon exemple.
+  New best BLEU: 30.51 — saved to best_model.pt
+Epoch 5
+Train loss: 1.863751 | Accuracy: 60.1490%
+
+Test loss: 1.929398 | Accuracy: 60.4007%
+BLEU: 30.23
+  hyp: revenus et dépenses
+  ref: projection des revenus et des dépenses pour 1998 à 2001
+  hyp: le tribunal doit rendre des conclusions concernant les marchandises visées par la décision d
+éfinitive.
+  ref: le tribunal doit rendre une décision à l'égard des marchandises visées par la décision défin
+itive de dumping, au plus tard 120 jours après l'avis de décision provisoire de l'adrc.
+  hyp: les recommandations de financement de la réunion nationale sont approuvées à un niveau de di
+rection au sein de
+  ref: les recommandations de financement faites à la rencontre nationale sont approuvées au niveau
+ de la direction de téléfilm.
+  hyp: comme nous l’avons mentionné précédemment, la forte présence autochtone au yukon est une dim
+ension importante de la vie dans le territoire.
+  ref: des élections ont eu lieu récemment et les premiers signaux envoyés par le nouveau gouvernem
+ent ont été plutôt défavorables dans ce dossier.
+  hyp: un autre exemple est la principale entreprise du secteur qui compte 85 entreprises en europe
+, en afrique et en amérique du sud.
+  ref: la principale entreprise du secteur, qui compte 85 sociétés en europe, en en et en amérique
+du sud en est aussi un bon exemple.
+Epoch 6
+Train loss: 1.812545 | Accuracy: 60.9047%
+
+Test loss: 1.905185 | Accuracy: 60.7979%
+BLEU: 30.39
+  hyp: prévisions de revenus et dépenses
+  ref: projection des revenus et des dépenses pour 1998 à 2001
+  hyp: le tribunal est tenu de rendre des conclusions à l'égard des marchandises auxquelles s'appli
+que la décision définitive de dumping au plus tard dans les 120 jours suivant l'avis de décision pr
+ovisoire de l'adrc.
+  ref: le tribunal doit rendre une décision à l'égard des marchandises visées par la décision défin
+itive de dumping, au plus tard 120 jours après l'avis de décision provisoire de l'adrc.
+  hyp: les recommandations relatives au financement découlant de la rencontre nationale sont approu
+vées à un niveau de direction au sein de
+  ref: les recommandations de financement faites à la rencontre nationale sont approuvées au niveau
+ de la direction de téléfilm.
+  hyp: comme nous l’avons vu plus haut, la forte présence autochtone au yukon est une dimension imp
+ortante de la vie dans le territoire.
+  ref: des élections ont eu lieu récemment et les premiers signaux envoyés par le nouveau gouvernem
+ent ont été plutôt défavorables dans ce dossier.
+  hyp: un autre exemple est la principale entreprise du secteur qui compte 85 entreprises en europe
+, en afrique et en amérique du sud.
+  ref: la principale entreprise du secteur, qui compte 85 sociétés en europe, en en et en amérique
+du sud en est aussi un bon exemple.
+Epoch 7
+Train epoch 7:   0%|                                   | 23/21530 [00:05<1:19:08,  4.53it/s, avg=1.
+Train epoch 7:   0%|                 | 23/21530 [00:05<1:19:08,  4.53it/s, avg=1.6678, loss=1.4889]
+Train epoch 7:   0%|                 | 72/21530 [00:16<1:19:16,  4.51it/s, avg=1.6826, loss=1.7182]
+Train epoch 7:   0%|                 | 87/21530 [00:19<1:19:20,  4.50it/s, avg=1.6803, loss=1.7754]
+Train epoch 7:   0%|                | 102/21530 [00:22<1:19:06,  4.51it/s, avg=1.6900, loss=1.6460]
+Train epoch 7:   0%|                | 106/21530 [00:23<1:18:55,  4.52it/s, avg=1.6893, loss=1.3928]
+Train epoch 7:   1%|                | 117/21530 [00:25<1:18:56,  4.52it/s, avg=1.6948, loss=1.8230]
+Train epoch 7:   1%|                | 118/21530 [00:26<1:18:53,  4.52it/s, avg=1.6951, loss=1.7340]
+Train epoch 7:   1%|▏               | 211/21530 [00:46<1:18:31,  4.52it/s, avg=1.6951, loss=1.5927]
+Train loss: 1.769883 | Accuracy: 61.5280%
+Test loss: 1.889490 | Accuracy: 61.1077%
+BLEU: 31.04
+  hyp: revenus et dépenses prévus
+  ref: projection des revenus et des dépenses pour 1998 à 2001
+  hyp: le tribunal est tenu de rendre une conclusion concernant les marchandises auxquelles la déci
+sion définitive de dumping ne s'applique pas plus de 120 jours après l'avis de décision provisoire
+de l'adrc.
+  ref: le tribunal doit rendre une décision à l'égard des marchandises visées par la décision défin
+itive de dumping, au plus tard 120 jours après l'avis de décision provisoire de l'adrc.
+  hyp: les recommandations de financement de la réunion nationale sont approuvées à un niveau organ
+isationnel au sein de
+  ref: les recommandations de financement faites à la rencontre nationale sont approuvées au niveau
+ de la direction de téléfilm.
+  hyp: comme nous l'avons mentionné précédemment, la présence autochtone forte du yukon est une imp
+ortante dimension de la vie dans le territoire.
+  ref: des élections ont eu lieu récemment et les premiers signaux envoyés par le nouveau gouvernem
+ent ont été plutôt défavorables dans ce dossier.
+  hyp: un autre exemple est la principale entreprise du secteur qui compte 85 sociétés en europe, e
+n afrique et en amérique du sud.
+  ref: la principale entreprise du secteur, qui compte 85 sociétés en europe, en en et en amérique
+du sud en est aussi un bon exemple.
+  New best BLEU: 31.04 — saved to best_model.pt
+Epoch 8
+Train loss: 1.733281 | Accuracy: 62.0884%
+Test loss: 1.872759 | Accuracy: 61.4389%
+BLEU: 32.16
+  hyp: revenus et dépenses prévus
+  ref: projection des revenus et des dépenses pour 1998 à 2001
+  hyp: le tribunal est tenu de rendre une conclusion à l'égard des marchandises auxquelles s'appliq
+ue la décision définitive de dumping au plus tard 120 jours après l'avis de décision provisoire de
+l'adrc.
+  ref: le tribunal doit rendre une décision à l'égard des marchandises visées par la décision défin
+itive de dumping, au plus tard 120 jours après l'avis de décision provisoire de l'adrc.
+  hyp: les recommandations de financement transmises à la réunion nationale sont approuvées à un ni
+veau de direction au sein de
+  ref: les recommandations de financement faites à la rencontre nationale sont approuvées au niveau
+ de la direction de téléfilm.
+  hyp: comme nous l’avons déjà dit, la forte présence autochtone au yukon s’avère une dimension imp
+ortante de la vie sur le territoire du yukon.
+  ref: des élections ont eu lieu récemment et les premiers signaux envoyés par le nouveau gouvernem
+ent ont été plutôt défavorables dans ce dossier.
+  hyp: un autre exemple est la principale entreprise du secteur qui compte 85 entreprises en europe
+, en en et en amérique du sud.
+  ref: la principale entreprise du secteur, qui compte 85 sociétés en europe, en en et en amérique
+du sud en est aussi un bon exemple.
+  New best BLEU: 32.16 — saved to best_model.pt
+Epoch 9
+Train loss: 1.701518 | Accuracy: 62.5591%
+Test loss: 1.859690 | Accuracy: 61.6710%
+BLEU: 31.38
+  hyp: revenus et dépenses prévus
+  ref: projection des revenus et des dépenses pour 1998 à 2001
+  hyp: le tribunal doit rendre des conclusions concernant les marchandises visées par la décision d
+éfinitive de dumping au plus tard 120 jours après l'avis de décision provisoire.
+  ref: le tribunal doit rendre une décision à l'égard des marchandises visées par la décision défin
+itive de dumping, au plus tard 120 jours après l'avis de décision provisoire de l'adrc.
+  hyp: les recommandations de financement transmises à la réunion nationale sont approuvées à un ni
+veau de direction au sein du
+  ref: les recommandations de financement faites à la rencontre nationale sont approuvées au niveau
+ de la direction de téléfilm.
+  hyp: comme nous l'avons noté précédemment, la forte présence autochtone au yukon est une dimensio
+n importante de la vie dans le territoire.
+  ref: des élections ont eu lieu récemment et les premiers signaux envoyés par le nouveau gouvernem
+ent ont été plutôt défavorables dans ce dossier.
+  hyp: un autre exemple est la principale compagnie du secteur qui compte 85 entreprises en europe,
+ en en et en amérique du sud.
+  ref: la principale entreprise du secteur, qui compte 85 sociétés en europe, en en et en amérique
+du sud en est aussi un bon exemple.

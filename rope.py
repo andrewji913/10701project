@@ -8,12 +8,20 @@ import random
 import numpy as np
 import matplotlib.pyplot as plt
 from torch import nn, optim
+from torch.cuda.amp import autocast, GradScaler
 from reference_data import get_translation_dataloader
 import os
 import kagglehub
 
-dataset_path = kagglehub.dataset_download("dhruvildave/en-fr-translation-dataset")
-file_path = os.path.join(dataset_path, "en-fr.csv")
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+
+# Use local en-fr.csv if it exists, otherwise download via kagglehub
+local_csv = os.path.join(SCRIPT_DIR, "en-fr.csv")
+if os.path.exists(local_csv):
+    file_path = local_csv
+else:
+    dataset_path = kagglehub.dataset_download("dhruvildave/en-fr-translation-dataset")
+    file_path = os.path.join(dataset_path, "en-fr.csv")
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -207,7 +215,7 @@ def evaluate_bleu(model, test_loader, word_dict, device, max_new_tokens=50, max_
     model.train()
     return bleu.score, hyps[:5], refs[:5]
     
-def train(model, train_loader, epoch, optimizer, criterion):
+def train(model, train_loader, epoch, optimizer, criterion, scaler):
     model.train()
     train_avg_loss = 0
     num_correct = 0
@@ -221,26 +229,27 @@ def train(model, train_loader, epoch, optimizer, criterion):
         inp    = seq[:, :-1]
         target = seq[:, 1:]
 
-        logits = model(inp)                                       # (B, L-1, V)
-        B, Lm1, V = logits.shape
+        optimizer.zero_grad()
 
-        # French-only mask: target index j maps to original seq index j+1,
-        # which is French iff j+1 > sep_pos  =>  j >= sep_pos
-        positions = torch.arange(Lm1, device=device).unsqueeze(0)            # (1, L-1)
-        french_mask = (positions >= sep_pos.unsqueeze(1)) & (target != 0)    # (B, L-1)
+        with autocast():
+            logits = model(inp)                                       # (B, L-1, V)
+            B, Lm1, V = logits.shape
 
-        # masked cross-entropy (criterion must be CrossEntropyLoss(reduction='none'))
-        per_token_loss = criterion(logits.reshape(-1, V), target.reshape(-1)).reshape(B, Lm1)
-        loss = (per_token_loss * french_mask).sum() / french_mask.sum().clamp(min=1)
+            positions = torch.arange(Lm1, device=device).unsqueeze(0)            # (1, L-1)
+            french_mask = (positions >= sep_pos.unsqueeze(1)) & (target != 0)    # (B, L-1)
+
+            per_token_loss = criterion(logits.reshape(-1, V), target.reshape(-1)).reshape(B, Lm1)
+            loss = (per_token_loss * french_mask).sum() / french_mask.sum().clamp(min=1)
 
         predictions = logits.argmax(dim=-1)                       # (B, L-1)
         num_correct += ((predictions == target) & french_mask).sum().item()
         num_tokens  += french_mask.sum().item()
 
-        optimizer.zero_grad()
-        loss.backward()
+        scaler.scale(loss).backward()
+        scaler.unscale_(optimizer)
         torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)
-        optimizer.step()
+        scaler.step(optimizer)
+        scaler.update()
 
         train_avg_loss += loss.item()
         running = train_avg_loss / (batch_idx + 1)
@@ -287,9 +296,10 @@ def test(model, test_loader, epoch, criterion):
 def run(num_epochs, model, train_loader, test_loader, optimizer, criterion, vocab, max_len):
     train_loss_hist, train_acc_hist, test_loss_hist, test_acc_hist, bleu_hist = [], [], [], [], []
     best_bleu = 0.0
+    scaler = GradScaler()
     for epoch in range(num_epochs):
         print(f"Epoch {epoch}")
-        train_loss, train_acc = train(model, train_loader, epoch, optimizer, criterion)
+        train_loss, train_acc = train(model, train_loader, epoch, optimizer, criterion, scaler)
 
         print(f"Train loss: {train_loss:.06f} | Accuracy: {train_acc*100:.04f}%")
 
@@ -332,9 +342,9 @@ def run(num_epochs, model, train_loader, test_loader, optimizer, criterion, voca
 def main(
     #Hyperparameters
     vocabulary_size = 32000,
-    batch_size = 64,
+    batch_size = 256,
     max_length = 100,
-    lr = 1e-3,
+    lr = 3e-4,
     num_epochs = 10,
     n_heads = 8,
     d_model = 512,
@@ -356,7 +366,8 @@ def main(
 
    
     train_dataloader, test_dataloader, vocab = get_translation_dataloader(
-        file_path, vocab_size=vocabulary_size, max_len=max_length, batch_size=batch_size)
+        file_path, vocab_size=vocabulary_size, max_len=max_length, batch_size=batch_size,
+        cache_path=os.path.join(SCRIPT_DIR, "data_cache.pt"))
 
     train_loss_list, train_acc_list, test_loss_list, test_acc_list, bleu_list = run(
       num_epochs, model, train_dataloader, test_dataloader, optimizer, criterion,
