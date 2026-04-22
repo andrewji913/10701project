@@ -1,6 +1,5 @@
 import os
 import sys
-import re
 import gc
 from collections import Counter
 
@@ -11,7 +10,7 @@ import torch
 from torch.utils.data import Dataset, DataLoader
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from reference_data import stream_csv_pairs
+from reference_data import stream_csv_pairs, seq2seq_tokenize as tokenize
 from config import Config
 
 PAD_IDX = 0
@@ -19,11 +18,7 @@ SOS_IDX = 1
 EOS_IDX = 2
 UNK_IDX = 3
 
-# uses reference_data.py to help
-
-def tokenize(text):
-    return re.findall(r"\w+|[^\w\s]", text.lower())
-
+# uses reference_data.py for CSV streaming + shared tokenization
 
 def build_vocab(texts, vocab_size):
     counter = Counter()

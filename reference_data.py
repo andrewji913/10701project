@@ -12,6 +12,61 @@ torch.manual_seed(10701)
 random.seed(10701)
 np.random.seed(10701)
 
+
+def seq2seq_tokenize(text):
+    return re.findall(r"\w+|[^\w\s]", text.lower())
+
+
+def stream_csv_pairs(csv_path, max_len, n_samples, rng_seed=10701):
+    kept_en, kept_fr = [], []
+    rng = random.Random(rng_seed)
+    total_seen = 0
+    skipped = 0
+    total_rows = 0
+    filtered_length = 0
+
+    with open(csv_path, "r", encoding="utf-8", errors="replace", newline="") as f:
+        reader = csv.DictReader(f)
+        while True:
+            try:
+                row = next(reader)
+            except StopIteration:
+                break
+            except csv.Error:
+                skipped += 1
+                continue
+            total_rows += 1
+            en = row.get("en")
+            fr = row.get("fr")
+            if not en or not fr:
+                continue
+
+            src_tokens = seq2seq_tokenize(en)
+            tgt_tokens = seq2seq_tokenize(fr)
+            if len(src_tokens) == 0 or len(tgt_tokens) == 0:
+                continue
+            if len(src_tokens) + 1 > max_len or len(tgt_tokens) + 2 > max_len:
+                filtered_length += 1
+                continue
+
+            total_seen += 1
+            if len(kept_en) < n_samples:
+                kept_en.append(en)
+                kept_fr.append(fr)
+            else:
+                j = rng.randint(0, total_seen - 1)
+                if j < n_samples:
+                    kept_en[j] = en
+                    kept_fr[j] = fr
+
+    print(f"stream_csv_pairs: skipped {skipped} malformed rows.")
+    print(
+        f"stream_csv_pairs: total rows: {total_rows} | filtered (length): {filtered_length} "
+        f"| passed: {total_seen} | kept: {len(kept_en)}"
+    )
+    return kept_en, kept_fr
+
+
 class TranslationDataset(Dataset):
     def __init__(self, src_texts, tgt_texts, word_dict, max_len=50):
         SOS = word_dict["SOS"]
@@ -65,7 +120,7 @@ def get_translation_dataloader(
     n_samples=25_000_000,  # >22.5M dataset size -> keeps all pairs
     chunk_size=500_000,    # larger chunks = fewer pandas overhead calls
     num_workers=4,         # increase for AWS (match to vCPU count)
-    cache_path=None,       # e.g. "data_cache.pt" — skip CSV reprocessing on reruns
+    cache_path=None,       # "data_cache.pt"
 ):
     if cache_path and os.path.exists(cache_path):
         print(f"Loading preprocessed data from {cache_path} ...")
@@ -85,7 +140,6 @@ def get_translation_dataloader(
         )
         return train_loader, test_loader, word_dict
 
-    # ---- 1. Stream the CSV in chunks, length-filter, and reservoir-sample ----
     kept_en, kept_fr = [], []
     rng = random.Random(10701)
     total_seen = 0
@@ -127,11 +181,7 @@ def get_translation_dataloader(
                     kept_fr[j] = fr
     print(f"Skipped {skipped} malformed rows.")
     print(f"Total rows: {total_rows} | Filtered out (too long): {filtered_length} | Passed filter: {total_seen} | Kept: {len(kept_en)}")
-
-    # ---- 2. Build vocab on the SUBSET ----
     word_dict = build_combined_vocab(kept_en, kept_fr, vocab_size)
-
-    # ---- 3. Train/test split ----
     idx = list(range(len(kept_en)))
     rng.shuffle(idx)
     split = int(0.9 * len(idx))
@@ -142,7 +192,6 @@ def get_translation_dataloader(
     test_en  = [kept_en[i] for i in test_idx]
     test_fr  = [kept_fr[i] for i in test_idx]
 
-    # Free raw text lists before building tensors (saves ~2-3 GB peak RAM)
     del kept_en, kept_fr, idx, train_idx, test_idx
 
     train_set = TranslationDataset(train_en, train_fr, word_dict, max_len)

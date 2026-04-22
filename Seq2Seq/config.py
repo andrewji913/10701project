@@ -34,7 +34,7 @@ class Config:
 
     checkpoint_dir = "checkpoints"
 
-    device = field(default_factory=lambda: "cuda" if torch.cuda.is_available() else "cpu")
+    device: str = field(default_factory=lambda: "cuda" if torch.cuda.is_available() else "cpu")
     cache_path = "data_cache.pt"
 
     def get_effective_dataset_size(self, total_rows=22_500_000):
