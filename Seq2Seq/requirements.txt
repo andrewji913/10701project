@@ -1,0 +1,8 @@
+torch>=2.0
+sacrebleu
+pandas
+numpy
+pyyaml
+tqdm
+matplotlib
+kagglehub
