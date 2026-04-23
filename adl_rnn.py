@@ -243,15 +243,15 @@ if __name__ == '__main__':
     
     train_loader, test_loader, word_dict = get_translation_dataloader(
         csv_path=csv_path, 
-        vocab_size=10000, 
-        batch_size=128
+        vocab_size=30000, 
+        batch_size=1024
     )
     
     id_to_word = {v: k for k, v in word_dict.items()}
     
     VOCAB_SIZE = len(word_dict)
     HIDDEN_SIZE = 256
-    NUM_EPOCHS = 10
+    NUM_EPOCHS = 2
     LR = 0.001
 
     encoder = EncoderRNN(input_vocab_size=VOCAB_SIZE, hidden_size=HIDDEN_SIZE).to(device)
