@@ -30,7 +30,7 @@ class Config:
 
     param_init_range = 0.08
 
-    seed = 42
+    seed = 10701
 
     checkpoint_dir = "checkpoints"
 
