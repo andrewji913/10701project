@@ -5,19 +5,18 @@ import torch
 @dataclass
 class Config:
     data_path = "en-fr.csv"
-    dataset_fraction = 0.002
-    dataset_size = None
+    dataset_fraction = 0.25
     max_len = 50
-    src_vocab_size = 20000
-    tgt_vocab_size = 15000
+    src_vocab_size = 30000
+    tgt_vocab_size = 20000
     reverse_source = True
 
-    embed_dim = 256
-    hidden_dim = 256
-    n_layers = 2
+    embed_dim = 512
+    hidden_dim = 512
+    n_layers = 4
     dropout = 0.0
 
-    batch_size = 128
+    batch_size = 32
     learning_rate = 0.7
     optimizer = "sgd"
     grad_clip = 5.0
@@ -49,16 +48,3 @@ class Config:
         else:
             self.src_vocab_size = 160000
             self.tgt_vocab_size = 80000
-
-
-def get_config():
-    return Config(
-        dataset_fraction=0.25,
-        embed_dim=512,
-        hidden_dim=512,
-        n_layers=4,
-        batch_size=32,
-        src_vocab_size=30000,
-        tgt_vocab_size=20000,
-        cache_path=None,
-    )

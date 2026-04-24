@@ -9,7 +9,7 @@ import sacrebleu
 from tqdm import tqdm
 import matplotlib.pyplot as plt
 
-from config import get_config
+from config import Config
 from preprocess import load_and_preprocess, build_inv_vocab, SOS_IDX, EOS_IDX, PAD_IDX
 from model import build_model
 from utils import set_seed, save_checkpoint, ids_to_text, count_parameters, format_time, LRScheduler, GradientClipper
@@ -187,7 +187,7 @@ def main():
     parser.add_argument("--force_rebuild", action="store_true")
     args = parser.parse_args()
 
-    config = get_config()
+    config = Config()
 
     if args.epochs:
         config.epochs = args.epochs
